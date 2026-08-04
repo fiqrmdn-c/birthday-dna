@@ -8,258 +8,98 @@ import {
   useEffect
 } from "react";
 
-
 export default function FlowerCurtain({
-
   flowers = [],
-
-  onComplete
-
+  onComplete,
 }) {
 
+  useEffect(() => {
 
+    const timer = setTimeout(() => {
 
-  useEffect(()=>{
+      if (onComplete) {
+        onComplete();
+      }
 
+    }, 1500);
 
-    const timer =
-      setTimeout(()=>{
-
-
-        if(onComplete){
-
-          onComplete();
-
-        }
-
-
-      },1500);
-
-
-
-    return ()=>{
-
+    return () => {
       clearTimeout(timer);
-
     };
 
-
-  },[
-    onComplete
-  ]);
-
-
-
-
+  }, [onComplete]);
 
   return (
 
     <div
-
       className="
-      fixed
-      inset-0
-      overflow-hidden
-      pointer-events-none
-      z-[999]
+        fixed
+        inset-0
+        overflow-hidden
+        pointer-events-none
+        z-[999]
       "
-
     >
 
+      {flowers.map((flower) => (
 
-      {
-        flowers.map(
+        <motion.img
 
-          (flower)=>(
+          key={flower.id}
 
+          src={flower.image}
 
-            <motion.img
+          alt="flower"
 
+          draggable={false}
 
-              key={
-                flower.id
-              }
+          className="
+            absolute
+            select-none
+            pointer-events-none
+            drop-shadow-lg
+          "
 
+          style={{
+            left: "50%",
+            top: "50%",
 
+            width: flower.size,
 
-              src={
-                flower.image
-              }
+            marginLeft: -flower.size / 2,
+            marginTop: -flower.size / 2,
 
+            zIndex: 200,
+          }}
 
+          initial={{
+            x: flower.currentX ?? flower.targetX,
+            y: flower.currentY ?? flower.targetY,
+            rotate: flower.rotate,
+            opacity: 1,
+          }}
 
-              alt="flower"
+          animate={{
+            x:
+              (flower.currentX ?? flower.targetX) < 0
+                ? (flower.currentX ?? flower.targetX) - 900
+                : (flower.currentX ?? flower.targetX) + 900,
 
+            rotate:
+              (flower.currentX ?? flower.targetX) < 0
+                ? -360
+                : 360,
+          }}
 
+          transition={{
+            delay: 0,
+            duration: 1.2,
+            ease: "easeInOut",
+          }}
 
-              draggable={false}
+        />
 
-
-
-              className="
-              absolute
-              select-none
-              pointer-events-none
-              drop-shadow-lg
-              "
-
-
-
-
-              style={{
-
-
-                left:"50%",
-
-
-                top:"50%",
-
-
-
-                width:
-                  flower.size,
-
-
-
-                marginLeft:
-                  -flower.size / 2,
-
-
-
-                marginTop:
-                  -flower.size / 2,
-
-
-
-                zIndex:200,
-
-
-
-              }}
-
-
-
-
-              initial={{
-
-
-                x:
-                  flower.currentX ??
-                  flower.targetX,
-
-
-
-                y:
-                  flower.currentY ??
-                  flower.targetY,
-
-
-
-                rotate:
-                  flower.rotate,
-
-
-
-                opacity:1,
-
-
-              }}
-
-
-
-
-              animate={{
-
-
-
-                x:
-
-
-                  (flower.currentX ??
-                   flower.targetX) < 0
-
-
-
-                  ?
-
-
-
-                  (flower.currentX ??
-                   flower.targetX)
-                  - 900
-
-
-
-                  :
-
-
-
-                  (flower.currentX ??
-                   flower.targetX)
-                  + 900,
-
-
-
-
-                rotate:
-
-
-                  (flower.currentX ??
-                   flower.targetX) < 0
-
-
-
-                  ?
-
-
-
-                  -360
-
-
-
-                  :
-
-
-
-                  360,
-
-
-
-              }}
-
-
-
-
-              transition={{
-
-
-                delay:
-                  0,
-
-
-
-                duration:
-                  1.2,
-
-
-
-                ease:
-                  "easeInOut",
-
-
-
-              }}
-
-
-            />
-
-
-          )
-
-        )
-      }
-
-
+      ))}
 
     </div>
 

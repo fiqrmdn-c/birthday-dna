@@ -70,7 +70,7 @@ orbitRadius: 600 + Math.random() * 100,
         Math.random() * 40,
 
       // lama animasi
-duration: 4.5 + Math.random() * 0.5,
+duration: 4 + Math.random() * 0.5,
 
 angularSpeed: 0.8 + Math.random() * 0.6,
 

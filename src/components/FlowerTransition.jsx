@@ -8,151 +8,66 @@ import {
 import FlowerWave from "./FlowerWave";
 import FlowerCurtain from "./FlowerCurtain";
 
-
 export default function FlowerTransition({
   show = true,
   onBackgroundChange,
   onComplete,
 }) {
-
-
-  const [phase, setPhase] =
-    useState("wave");
-
-
-  const [flowers, setFlowers] =
-    useState([]);
-
-
-
+  const [phase, setPhase] = useState("wave");
+  const [flowers, setFlowers] = useState([]);
 
   useEffect(() => {
-
-    if(show){
-
+    if (show) {
       setPhase("wave");
-
       setFlowers([]);
-
     }
-
   }, [show]);
 
-
-
-
-  if(!show)
-    return null;
-
-
-
+  if (!show) return null;
 
   return (
-
     <div
-
       className="
-      fixed
-      inset-0
-      overflow-hidden
-      pointer-events-none
-      z-[999]
+        fixed
+        inset-0
+        overflow-hidden
+        pointer-events-none
+        z-[999]
       "
-
     >
+      {phase === "wave" && (
+        <FlowerWave
+          wave={undefined}
+          onComplete={(result) => {
+            console.log(
+              "Wave selesai",
+              result.length,
+              "bunga"
+            );
 
+            setFlowers(result);
 
-
-      {
-        phase === "wave" && (
-
-
-          <FlowerWave
-
-
-            // ambil semua bunga
-            wave={undefined}
-
-
-
-            onComplete={(result)=>{
-
-
-              console.log(
-                "Wave selesai",
-                result.length,
-                "bunga"
-              );
-
-
-
-              setFlowers(result);
-              if (onBackgroundChange) {
-                onBackgroundChange();
-              }
-
-              setPhase(
-                "curtain"
-              );
-
-
-            }}
-
-
-
-          />
-
-
-        )
-      }
-
-
-
-
-
-      {
-        phase === "curtain" && (
-
-
-          <FlowerCurtain
-
-
-            flowers={
-              flowers
+            if (onBackgroundChange) {
+              onBackgroundChange();
             }
 
+            setPhase("curtain");
+          }}
+        />
+      )}
 
+      {phase === "curtain" && (
+        <FlowerCurtain
+          flowers={flowers}
+          onComplete={() => {
+            console.log("Curtain selesai");
 
-            onComplete={()=>{
-
-
-              console.log(
-                "Curtain selesai"
-              );
-
-
-
-              if(onComplete){
-
-                onComplete();
-
-              }
-
-
-            }}
-
-
-
-          />
-
-
-        )
-      }
-
-
-
+            if (onComplete) {
+              onComplete();
+            }
+          }}
+        />
+      )}
     </div>
-
   );
-
 }

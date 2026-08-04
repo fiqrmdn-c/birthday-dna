@@ -1,5 +1,7 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 export default function Hero() {
   const scrollToTimeline = () => {
     document
@@ -22,17 +24,41 @@ export default function Hero() {
         px-6
       "
     >
-      {/* Overlay agar tulisan lebih jelas */}
+      {/* Overlay */}
       <div className="absolute inset-0 bg-black/25" />
 
-      {/* Isi Hero */}
-      <div className="relative z-10">
-
-        <p className="text-pink-200 tracking-[6px] uppercase text-lg">
+      {/* Hero Content */}
+      <motion.div
+        className="relative z-10"
+        initial={{
+          opacity: 0,
+          y: 40,
+          scale: 0.96,
+        }}
+        animate={{
+          opacity: 1,
+          y: 0,
+          scale: 1,
+        }}
+        transition={{
+          duration: 1.2,
+          delay: 0.2,
+          ease: "easeOut",
+        }}
+      >
+        <motion.p
+          className="text-pink-200 tracking-[6px] uppercase text-lg"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            delay: 0.25,
+            duration: 0.8,
+          }}
+        >
           Happy Birthday
-        </p>
+        </motion.p>
 
-        <h1
+        <motion.h1
           className="
             mt-4
             text-white
@@ -40,29 +66,65 @@ export default function Hero() {
             md:text-8xl
             font-bold
           "
+          initial={{
+            opacity: 0,
+            y: 20,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            delay: 0.45,
+            duration: 0.9,
+          }}
         >
           Topik
-        </h1>
+        </motion.h1>
 
-        <p
+        <motion.p
           className="
             mt-8
             text-white/90
             text-lg
             max-w-xl
             leading-8
+            mx-auto
           "
+          initial={{
+            opacity: 0,
+            y: 20,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            delay: 0.7,
+            duration: 0.9,
+          }}
         >
           Semoga setiap langkahmu dipenuhi kebahagiaan,
           kesehatan, dan segala hal baik yang selalu
           kamu impikan.
-        </p>
+        </motion.p>
+      </motion.div>
 
-      </div>
-
-      {/* Indikator Scroll */}
-      <button
+      {/* Scroll Indicator */}
+      <motion.button
         onClick={scrollToTimeline}
+        initial={{
+          opacity: 0,
+          y: 15,
+        }}
+        animate={{
+          opacity: 1,
+          y: 0,
+        }}
+        transition={{
+          delay: 1.3,
+          duration: 0.8,
+        }}
         className="
           absolute
           bottom-10
@@ -108,7 +170,7 @@ export default function Hero() {
             "
           />
         </div>
-      </button>
+      </motion.button>
     </section>
   );
 }
