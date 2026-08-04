@@ -11,6 +11,7 @@ import FlowerCurtain from "./FlowerCurtain";
 
 export default function FlowerTransition({
   show = true,
+  onBackgroundChange,
   onComplete,
 }) {
 
@@ -86,8 +87,9 @@ export default function FlowerTransition({
 
 
               setFlowers(result);
-
-
+              if (onBackgroundChange) {
+                onBackgroundChange();
+              }
 
               setPhase(
                 "curtain"

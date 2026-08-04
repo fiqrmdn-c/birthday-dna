@@ -234,7 +234,7 @@ export default function FlowerCurtain({
 
 
                 delay:
-                  0.8,
+                  0.15,
 
 
 

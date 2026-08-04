@@ -399,7 +399,7 @@ export default function FlowerWave({
 
       },
 
-      (maxTime + 1.2) * 1000
+      (maxTime + 0.5) * 1000
 
       );
 

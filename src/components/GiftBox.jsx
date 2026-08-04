@@ -18,12 +18,9 @@ export default function GiftBox({ onOpen }) {
 
   return (
     <div
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-cover bg-center"
-      style={{
-        backgroundImage: "url('/images/background.jpg')",
-      }}
+      className="relative min-h-screen flex items-center justify-center overflow-hidden z-10"
     >
-      <div className="absolute inset-0 bg-black/10"></div>
+      <div className="absolute inset-0 bg-black/15 z-0 "></div>
 
       <motion.div
         className="relative cursor-pointer z-30"
