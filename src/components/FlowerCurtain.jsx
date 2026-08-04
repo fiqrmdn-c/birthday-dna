@@ -33,7 +33,7 @@ export default function FlowerCurtain({
         }
 
 
-      },3000);
+      },1500);
 
 
 
@@ -234,12 +234,12 @@ export default function FlowerCurtain({
 
 
                 delay:
-                  0.15,
+                  0,
 
 
 
                 duration:
-                  2.2,
+                  1.2,
 
 
 
