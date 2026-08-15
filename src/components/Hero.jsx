@@ -72,14 +72,14 @@ export default function Hero() {
         className="
           relative
           z-10
-          w-[460px]
-          h-[460px]
-          sm:w-[540px]
-          sm:h-[540px]
-          md:w-[540px]
-          md:h-[540px]
-          lg:w-[600px]
-          lg:h-[600px]
+          w-[540px]
+          h-[540px]
+          sm:w-[720px]
+          sm:h-[720px]
+          md:w-[720px]
+          md:h-[720px]
+          lg:w-[720px]
+          lg:h-[720px]
           flex
           items-center
           justify-center
