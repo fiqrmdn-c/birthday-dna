@@ -32,10 +32,10 @@ export default function Hero() {
           absolute
           top-0
           left-0
-          w-84
-          sm:w-96
-          md:w-96
-          lg:w-96
+          w-68
+          sm:w-80
+          md:w-80
+          lg:w-80
           h-auto
           scale-x-[-1]
           pointer-events-none
@@ -54,10 +54,10 @@ export default function Hero() {
           absolute
           top-0
           right-0
-          w-84
-          sm:w-96
-          md:w-96
-          lg:w-96
+          w-68
+          sm:w-80
+          md:w-80
+          lg:w-80
           h-auto
           pointer-events-none
           select-none
@@ -75,7 +75,7 @@ export default function Hero() {
           absolute
           bottom-15
           left-0
-          w-68
+          w-74
           sm:w-80
           md:w-80
           lg:w-80
@@ -97,7 +97,7 @@ export default function Hero() {
           absolute
           bottom-15
           right-0
-          w-68
+          w-74
           sm:w-80
           md:w-80
           lg:w-80
