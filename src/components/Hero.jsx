@@ -73,7 +73,7 @@ export default function Hero() {
         alt=""
         className="
           absolute
-          bottom-0
+          bottom-15
           left-0
           w-68
           sm:w-80
@@ -95,7 +95,7 @@ export default function Hero() {
         alt=""
         className="
           absolute
-          bottom-0
+          bottom-15
           right-0
           w-68
           sm:w-80
