@@ -92,7 +92,6 @@ export default function FlowerCurtain({
           }}
 
           transition={{
-            delay: 0,
             duration: 1.2,
             ease: "easeInOut",
           }}
