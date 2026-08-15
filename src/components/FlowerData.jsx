@@ -4,17 +4,55 @@ const flowerImages = [
   "/images/flower3.png",
 ];
 
-const TOTAL_FLOWERS = 300;
+const TOTAL_FLOWERS = 100;
 
-// jumlah kolom persegi panjang
-const COLS = 24;
 
-// otomatis menghitung jumlah baris
-const ROWS = Math.ceil(TOTAL_FLOWERS / COLS);
+// ==============================
+// UKURAN LAYAR
+// ==============================
 
-// jarak antar bunga
-const SPACING_X = 60;
-const SPACING_Y = 55;
+const getScreenSize = () => {
+  if (typeof window === "undefined") {
+    return {
+      width: 390,
+      height: 844,
+    };
+  }
+
+  return {
+    width: window.innerWidth,
+    height: window.innerHeight,
+  };
+};
+
+const { width, height } = getScreenSize();
+
+
+// ==============================
+// GRID RESPONSIVE
+// ==============================
+
+let COLS;
+let ROWS;
+
+if (width < 480) {
+  // HP portrait
+  COLS = 8;
+  ROWS = 13;
+} else if (width < 768) {
+  // Tablet / HP landscape
+  COLS = 10;
+  ROWS = 10;
+} else {
+  // Desktop
+  COLS = 13;
+  ROWS = 8;
+}
+
+
+// ==============================
+// DATA BUNGA
+// ==============================
 
 export const FlowerData = Array.from(
   { length: TOTAL_FLOWERS },
@@ -23,22 +61,54 @@ export const FlowerData = Array.from(
     const col = index % COLS;
     const row = Math.floor(index / COLS);
 
-    // posisi dasar persegi panjang
-    const baseX =
-      (col - (COLS - 1) / 2) * SPACING_X;
 
-    const baseY =
-      (row - (ROWS - 1) / 2) * SPACING_Y;
+    // Ukuran setiap area
 
-    // agar tidak terlalu rapi
-const r = Math.random() * 45;
-const a = Math.random() * Math.PI * 2;
+    const cellWidth =
+      width / COLS;
 
-const targetX =
-  baseX + Math.cos(a) * r;
+    const cellHeight =
+      height / ROWS;
 
-const targetY =
-  baseY + Math.sin(a) * r;
+
+    // Posisi tengah cell
+
+    const centerX =
+      col * cellWidth +
+      cellWidth / 2;
+
+    const centerY =
+      row * cellHeight +
+      cellHeight / 2;
+
+
+    // Random kecil
+    // supaya tidak terlihat seperti grid
+
+    const randomX =
+      (Math.random() - 0.5) *
+      cellWidth *
+      0.5;
+
+    const randomY =
+      (Math.random() - 0.5) *
+      cellHeight *
+      0.5;
+
+
+    // Posisi akhir relatif
+    // terhadap tengah layar
+
+    const targetX =
+      centerX -
+      width / 2 +
+      randomX;
+
+    const targetY =
+      centerY -
+      height / 2 +
+      randomY;
+
 
     return {
 
@@ -47,41 +117,80 @@ const targetY =
       image:
         flowerImages[
           Math.floor(
-            Math.random() * flowerImages.length
+            Math.random() *
+              flowerImages.length
           )
         ],
 
-      // posisi akhir
+
+      // ==========================
+      // POSISI AKHIR
+      // ==========================
+
       targetX,
       targetY,
 
-      // sudut awal spiral
-angle: (index / TOTAL_FLOWERS) * Math.PI * 2,
 
-orbitRadius: 600 + Math.random() * 100,
+      // ==========================
+      // SPIRAL
+      // ==========================
 
-      // rotasi bunga
+      angle:
+        (index / TOTAL_FLOWERS) *
+        Math.PI *
+        2,
+
+      orbitRadius:
+        500 +
+        Math.random() * 250,
+
+
+      // ==========================
+      // ROTASI
+      // ==========================
+
       rotate:
         Math.random() * 1080,
 
-      // ukuran bunga
+
+      // ==========================
+      // UKURAN BUNGA
+      // ==========================
+
       size:
-        90 +
-        Math.random() * 40,
+        width < 480
+          ? 70 + Math.random() * 35
+          : 85 + Math.random() * 40,
 
-      // lama animasi
-duration: 4 + Math.random() * 0.5,
 
-angularSpeed: 0.8 + Math.random() * 0.6,
+      // ==========================
+      // ANIMASI
+      // ==========================
 
-      // delay bertahap
-delay: Math.random() * 0.5,
+      duration:
+        4 +
+        Math.random() * 0.5,
 
-      // wave
+      angularSpeed:
+        0.8 +
+        Math.random() * 0.6,
+
+      delay:
+        Math.random() * 0.5,
+
+
+      // ==========================
+      // WAVE
+      // ==========================
+
       wave:
         Math.floor(index / 20),
 
-      // skala akhir
+
+      // ==========================
+      // SCALE
+      // ==========================
+
       scale:
         0.9 +
         Math.random() * 0.3,
@@ -89,13 +198,22 @@ delay: Math.random() * 0.5,
   }
 );
 
+
+// ==============================
+// FILTER WAVE
+// ==============================
+
 export function getWaveFlowers(wave) {
 
-  if (wave === undefined || wave === null) {
+  if (
+    wave === undefined ||
+    wave === null
+  ) {
     return FlowerData;
   }
 
   return FlowerData.filter(
-    (flower) => flower.wave === wave
+    (flower) =>
+      flower.wave === wave
   );
 }
