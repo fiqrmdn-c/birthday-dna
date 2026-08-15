@@ -72,8 +72,8 @@ export default function Hero() {
         className="
           relative
           z-10
-          w-[380px]
-          h-[380px]
+          w-[460px]
+          h-[460px]
           sm:w-[460px]
           sm:h-[460px]
           md:w-[540px]
