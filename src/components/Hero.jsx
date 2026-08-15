@@ -32,10 +32,10 @@ export default function Hero() {
           absolute
           top-0
           left-0
-          w-28
-          sm:w-40
-          md:w-52
-          lg:w-60
+          w-84
+          sm:w-96
+          md:w-96
+          lg:w-96
           h-auto
           pointer-events-none
           select-none
@@ -53,10 +53,10 @@ export default function Hero() {
           absolute
           top-0
           right-0
-          w-28
-          sm:w-40
-          md:w-52
-          lg:w-60
+          w-68
+          sm:w-80
+          md:w-80
+          lg:w-80
           h-auto
           scale-x-[-1]
           pointer-events-none
@@ -132,9 +132,9 @@ export default function Hero() {
               font-title
               mt-2
               text-7xl
-              sm:text-7xl
+              sm:text-8xl
               md:text-8xl
-              lg:text-9xl
+              lg:text-8xl
               leading-none
               text-white
             "
