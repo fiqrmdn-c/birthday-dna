@@ -54,10 +54,10 @@ export default function Hero() {
           absolute
           top-0
           right-0
-          w-68
-          sm:w-80
-          md:w-80
-          lg:w-80
+          w-84
+          sm:w-96
+          md:w-96
+          lg:w-96
           h-auto
           pointer-events-none
           select-none
