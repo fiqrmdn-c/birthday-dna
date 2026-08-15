@@ -26,7 +26,7 @@ export default function Hero() {
           BUNGA SUDUT KIRI ATAS
       ========================== */}
       <img
-        src="/images/hero-flower1.png"
+        src="/images/hero-flower2.png"
         alt=""
         className="
           absolute
@@ -37,6 +37,7 @@ export default function Hero() {
           md:w-96
           lg:w-96
           h-auto
+          scale-x-[-1]
           pointer-events-none
           select-none
           z-0
@@ -52,6 +53,49 @@ export default function Hero() {
         className="
           absolute
           top-0
+          right-0
+          w-68
+          sm:w-80
+          md:w-80
+          lg:w-80
+          h-auto
+          pointer-events-none
+          select-none
+          z-0
+        "
+      />
+
+            {/* =========================
+          BUNGA SUDUT BAWAH KIRI
+      ========================== */}
+      <img
+        src="/images/hero-flower1.png"
+        alt=""
+        className="
+          absolute
+          bottom-0
+          left-0
+          w-68
+          sm:w-80
+          md:w-80
+          lg:w-80
+          h-auto
+          scale-x-[-1]
+          pointer-events-none
+          select-none
+          z-0
+        "
+      />
+
+            {/* =========================
+          BUNGA SUDUT KANAN BAWAH
+      ========================== */}
+      <img
+        src="/images/hero-flower1.png"
+        alt=""
+        className="
+          absolute
+          bottom-0
           right-0
           w-68
           sm:w-80
@@ -120,7 +164,7 @@ export default function Hero() {
               md:text-4xl
               lg:text-5xl
               tracking-[0.25em]
-              text-white
+              text-red-400
             "
           >
             Happy
@@ -135,7 +179,7 @@ export default function Hero() {
               md:text-8xl
               lg:text-8xl
               leading-none
-              text-white
+              text-red-400
             "
           >
             Birthday
@@ -150,7 +194,7 @@ export default function Hero() {
               md:text-3xl
               lg:text-4xl
               tracking-wide
-              text-white
+              text-red-400
             "
           >
             Topik
@@ -175,7 +219,7 @@ export default function Hero() {
           text-sm
           sm:text-base
           tracking-[0.2em]
-          text-white
+          text-red-400
           cursor-pointer
         "
       >
