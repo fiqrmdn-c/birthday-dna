@@ -58,7 +58,6 @@ export default function Hero() {
           md:w-80
           lg:w-80
           h-auto
-          scale-x-[-1]
           pointer-events-none
           select-none
           z-0
