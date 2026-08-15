@@ -116,10 +116,10 @@ export default function Hero() {
           <p
             className="
               font-serif
-              text-lg
-              sm:text-xl
-              md:text-2xl
-              lg:text-3xl
+              text-3xl
+              sm:text-3xl
+              md:text-4xl
+              lg:text-5xl
               tracking-[0.25em]
               text-white
             "
@@ -131,10 +131,10 @@ export default function Hero() {
             className="
               font-title
               mt-2
-              text-5xl
-              sm:text-6xl
-              md:text-7xl
-              lg:text-8xl
+              text-7xl
+              sm:text-7xl
+              md:text-8xl
+              lg:text-9xl
               leading-none
               text-white
             "
