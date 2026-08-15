@@ -13,6 +13,7 @@ import {
 
 import { getWaveFlowers } from "./FlowerData";
 
+
 function Flower({ flower }) {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -31,13 +32,20 @@ function Flower({ flower }) {
     const elapsed =
       (time - startTime.current) / 1000;
 
-    if (elapsed < flower.delay) return;
+    if (elapsed < flower.delay) {
+      return;
+    }
 
     const progress = Math.min(
       (elapsed - flower.delay) /
         flower.duration,
       1
     );
+
+
+    // ==========================
+    // SPIRAL
+    // ==========================
 
     const theta =
       flower.angle +
@@ -58,26 +66,43 @@ function Flower({ flower }) {
     const spiralY =
       Math.sin(theta) * radius;
 
+
+    // ==========================
+    // MENUJU POSISI AKHIR
+    // ==========================
+
     const distance = Math.sqrt(
-      flower.targetX ** 2 +
-        flower.targetY ** 2
+      flower.targetX *
+        flower.targetX +
+        flower.targetY *
+        flower.targetY
     );
 
-    const spreadStart = Math.min(
-      0.75,
-      0.35 + distance / 3500
-    );
+    const spreadStart =
+      Math.min(
+        0.75,
+        0.35 +
+          distance / 3500
+      );
+
 
     let currentX;
     let currentY;
 
-    if (progress < spreadStart) {
+
+    if (
+      progress <
+      spreadStart
+    ) {
       currentX = spiralX;
       currentY = spiralY;
     } else {
+
       const t =
-        (progress - spreadStart) /
-        (1 - spreadStart);
+        (progress -
+          spreadStart) /
+        (1 -
+          spreadStart);
 
       currentX =
         spiralX * (1 - t) +
@@ -88,19 +113,28 @@ function Flower({ flower }) {
         flower.targetY * t;
     }
 
+
     if (progress >= 1) {
-      currentX = flower.targetX;
-      currentY = flower.targetY;
+      currentX =
+        flower.targetX;
+
+      currentY =
+        flower.targetY;
     }
 
-    flower.currentX = currentX;
-    flower.currentY = currentY;
+
+    // ==========================
+    // UPDATE MOTION VALUE
+    // ==========================
 
     x.set(currentX);
     y.set(currentY);
 
     scale.set(
-      Math.min(progress * 2, 1)
+      Math.min(
+        progress * 2,
+        1
+      )
     );
 
     rotate.set(
@@ -111,43 +145,61 @@ function Flower({ flower }) {
     opacity.set(progress);
   });
 
+
   return (
     <motion.img
       src={flower.image}
-      alt="flower"
+      alt=""
       draggable={false}
+
       className="
         absolute
         pointer-events-none
         select-none
-        drop-shadow-lg
       "
+
       style={{
         left: "50%",
         top: "50%",
+
         width: flower.size,
-        marginLeft: -flower.size / 2,
-        marginTop: -flower.size / 2,
+
+        marginLeft:
+          -flower.size / 2,
+
+        marginTop:
+          -flower.size / 2,
+
         x,
         y,
         scale,
         rotate,
         opacity,
+
         zIndex: 100,
+
+        willChange:
+          "transform, opacity",
       }}
     />
   );
 }
 
+
 export default function FlowerWave({
   wave,
   onComplete,
 }) {
+
   const flowers =
     getWaveFlowers(wave);
 
+
   useEffect(() => {
-    if (!onComplete) return;
+
+    if (!onComplete) {
+      return;
+    }
 
     if (
       !flowers ||
@@ -156,23 +208,27 @@ export default function FlowerWave({
       return;
     }
 
-    const maxTime = Math.max(
-      ...flowers.map(
-        (flower) =>
-          flower.delay +
-          flower.duration
-      )
-    );
 
-    // Mulai curtain sedikit lebih awal
+    const maxTime =
+      Math.max(
+        ...flowers.map(
+          (flower) =>
+            flower.delay +
+            flower.duration
+        )
+      );
+
+
     const transitionTime =
       Math.max(
         maxTime - 0.25,
         0
       );
 
+
     const timer =
       setTimeout(() => {
+
         console.log(
           "Wave selesai",
           flowers.length,
@@ -180,23 +236,29 @@ export default function FlowerWave({
         );
 
         onComplete(flowers);
+
       }, transitionTime * 1000);
+
 
     return () =>
       clearTimeout(timer);
+
   }, [
     flowers,
     onComplete,
   ]);
 
+
   return (
     <>
-      {flowers.map((flower) => (
-        <Flower
-          key={flower.id}
-          flower={flower}
-        />
-      ))}
+      {flowers.map(
+        (flower) => (
+          <Flower
+            key={flower.id}
+            flower={flower}
+          />
+        )
+      )}
     </>
   );
 }
