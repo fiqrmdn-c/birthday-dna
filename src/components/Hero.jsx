@@ -74,8 +74,8 @@ export default function Hero() {
           z-10
           w-[460px]
           h-[460px]
-          sm:w-[460px]
-          sm:h-[460px]
+          sm:w-[540px]
+          sm:h-[540px]
           md:w-[540px]
           md:h-[540px]
           lg:w-[600px]
