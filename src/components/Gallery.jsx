@@ -34,24 +34,24 @@ export default function Gallery() {
           z-20
 
           /* HP */
-          left-[0%]
-          top-[12.5%]
-          w-[75%]
+          left-[25%]
+          top-[18%]
+          w-[18%]
 
           /* SM */
-          sm:left-[0%]
-          sm:top-[11%]
-          sm:w-[80%]
+          sm:left-[25%]
+          sm:top-[18%]
+          sm:w-[18%]
 
           /* MD */
-          md:left-[0%]
-          md:top-[10%]
-          md:w-[90%]
+          md:left-[25%]
+          md:top-[18%]
+          md:w-[18%]
 
           /* LG */
-          lg:left-[0%]
-          lg:top-[9%]
-          lg:w-[90%]
+          lg:left-[25%]
+          lg:top-[18%]
+          lg:w-[18%]
 
           rotate-[-11deg]
         "
@@ -81,23 +81,23 @@ export default function Gallery() {
           z-10
 
           /* HP */
-          left-[85%]
-          top-[20%]
-          w-[20%]
+          left-[58%]
+          top-[16%]
+          w-[30%]
 
           /* SM */
-          sm:left-[85%]
-          sm:top-[0%]
+          sm:left-[58%]
+          sm:top-[16%]
           sm:w-[30%]
 
           /* MD */
-          md:left-[85%]
-          md:top-[20%]
+          md:left-[58%]
+          md:top-[16%]
           md:w-[30%]
 
           /* LG */
-          lg:left-[85%]
-          lg:top-[20%]
+          lg:left-[58%]
+          lg:top-[16%]
           lg:w-[30%]
 
           rotate-[3deg]
@@ -128,22 +128,22 @@ export default function Gallery() {
           z-50
 
           /* HP */
-          left-[50%]
+          left-[40%]
           top-[30%]
           w-[13%]
 
           /* SM */
-          sm:left-[50%]
+          sm:left-[40%]
           sm:top-[30%]
           sm:w-[22%]
 
           /* MD */
-          md:left-[50%]
+          md:left-[40%]
           md:top-[30%]
           md:w-[22%]
 
           /* LG */
-          lg:left-[50%]
+          lg:left-[40%]
           lg:top-[30%]
           lg:w-[22%]
 
@@ -175,22 +175,22 @@ export default function Gallery() {
           z-40
 
           /* HP */
-          left-[20%]
+          left-[7%]
           top-[50%]
           w-[13%]
 
           /* SM */
-          sm:left-[20%]
+          sm:left-[7%]
           sm:top-[50%]
           sm:w-[22%]
 
           /* MD */
-          md:left-[20%]
+          md:left-[7%]
           md:top-[50%]
           md:w-[22%]
 
           /* LG */
-          lg:left-[20%]
+          lg:left-[7%]
           lg:top-[50%]
           lg:w-[22%]
 
@@ -222,23 +222,23 @@ export default function Gallery() {
           z-40
 
           /* HP */
-          left-[58%]
-          top-[58%]
+          left-[45%]
+          top-[67%]
           w-[13%]
 
           /* SM */
-          sm:left-[58%]
-          sm:top-[58%]
+          sm:left-[45%]
+          sm:top-[67%]
           sm:w-[22%]
 
           /* MD */
-          md:left-[58%]
-          md:top-[58%]
+          md:left-[45%]
+          md:top-[67%]
           md:w-[22%]
 
           /* LG */
-          lg:left-[58%]
-          lg:top-[58%]
+          lg:left-[45%]
+          lg:top-[67%]
           lg:w-[22%]
 
           rotate-[8deg]
@@ -269,23 +269,23 @@ export default function Gallery() {
           z-[60]
 
           /* HP */
-          left-[90%]
-          top-[50%]
+          left-[74%]
+          top-[58%]
           text-[7vw]
 
           /* SM */
-          sm:left-[90%]
-          sm:top-[50%]
+          sm:left-[74%]
+          sm:top-[58%]
           sm:text-[5.5vw]
 
           /* MD */
-          md:left-[90%]
-          md:top-[50%]
+          md:left-[74%]
+          md:top-[58%]
           md:text-[4.5vw]
 
           /* LG */
-          lg:left-[90%]
-          lg:top-[50%]
+          lg:left-[74%]
+          lg:top-[58%]
           lg:text-[4vw]
 
           leading-none
