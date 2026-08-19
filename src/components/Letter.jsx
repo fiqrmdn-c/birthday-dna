@@ -337,9 +337,9 @@ export default function Letter() {
                 bg-[#fffdf8]
                 rounded-sm
                 shadow-2xl
-                px-8
+                px-10
                 py-8
-                sm:px-12
+                sm:px-14
                 sm:py-12
               "
             >
