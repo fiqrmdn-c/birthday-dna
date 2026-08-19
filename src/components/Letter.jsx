@@ -394,7 +394,7 @@ export default function Letter() {
                   text-[15px]
                   sm:text-base
                   leading-8
-                  text-justify
+                  text-center
                 "
               >
                 {displayText}
@@ -438,10 +438,11 @@ export default function Letter() {
                     font-title
                     text-3xl
                     text-[#6b4c4c]
+                    relative
+                    right-6
                   "
                 >
-                  Untukmu,
-                  <br />
+                  
                   Topik
                 </motion.div>
               )}
@@ -470,7 +471,7 @@ export default function Letter() {
             className="
               absolute
               -bottom-2
-              text-white/80
+              text-red-500
               text-xs
               tracking-[0.15em]
               text-center

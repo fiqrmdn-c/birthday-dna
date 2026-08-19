@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import GiftBox from "./GiftBox";
 import FlowerTransition from "./FlowerTransition";
@@ -10,20 +10,31 @@ export default function Opening({ onMusicStart }) {
   const [changeBackground, setChangeBackground] = useState(false);
   const [closing, setClosing] = useState(false);
   const [finished, setFinished] = useState(false);
+  const [scrollLocked, setScrollLocked] = useState(true);
+
+  // =========================
+  // KONTROL SCROLL
+  // =========================
+
+  useEffect(() => {
+    document.body.style.overflow = scrollLocked
+      ? "hidden"
+      : "";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [scrollLocked]);
 
   // =========================
   // KADO DIBUKA
   // =========================
 
   const handleOpenGift = () => {
-    // Mulai musik
     onMusicStart?.();
 
-    // Mulai FlowerWave
     setShowFlower(true);
 
-    // Background halaman berikutnya
-    // mulai muncul saat FlowerWave berlangsung
     setTimeout(() => {
       setChangeBackground(true);
     }, 5000);
@@ -36,16 +47,19 @@ export default function Opening({ onMusicStart }) {
   const handleFlowerComplete = () => {
     console.log("FLOWER FINISHED");
 
-    // Hilangkan flower
+    // Hilangkan bunga
     setShowFlower(false);
 
-    // Mulai fade out Opening
+    // BUKA SCROLL SEKARANG
+    setScrollLocked(false);
+
+    // MULAI FADE OUT
     setClosing(true);
 
     // Tunggu fade selesai
     setTimeout(() => {
       setFinished(true);
-    }, 500);
+    }, 700);
   };
 
   // =========================
@@ -72,9 +86,7 @@ export default function Opening({ onMusicStart }) {
       `}
     >
 
-      {/* =================================
-          BACKGROUND OPENING
-      ================================= */}
+      {/* BACKGROUND OPENING */}
 
       <div
         className={`
@@ -94,15 +106,11 @@ export default function Opening({ onMusicStart }) {
         }}
       />
 
-      {/* =================================
-          ISI OPENING
-      ================================= */}
+      {/* ISI OPENING */}
 
       <div className="relative z-20 w-full h-full">
 
-        {/* =================================
-            FLOWER TRANSITION
-        ================================= */}
+        {/* FLOWER */}
 
         <FlowerTransition
           show={showFlower}
@@ -112,9 +120,7 @@ export default function Opening({ onMusicStart }) {
           onComplete={handleFlowerComplete}
         />
 
-        {/* =================================
-            GIFT BOX
-        ================================= */}
+        {/* KADO */}
 
         {!showFlower && !closing && (
           <GiftBox
