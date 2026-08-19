@@ -162,7 +162,7 @@ export default function Gallery() {
 
           left-[40%]
           top-[30%]
-          w-[13%]
+          w-[30%]
 
           sm:left-[40%]
           sm:top-[30%]
