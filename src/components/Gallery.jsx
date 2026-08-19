@@ -247,7 +247,7 @@ export default function Gallery() {
           z-40
 
           left-[45%]
-          top-[67%]
+          top-[45%]
           w-[22%]
 
           sm:left-[45%]
