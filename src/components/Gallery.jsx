@@ -359,7 +359,7 @@ export default function Gallery() {
           z-[60]
 
           left-[74%]
-          top-[36%]
+          top-[34%]
           text-[7vw]
 
           sm:left-[74%]
