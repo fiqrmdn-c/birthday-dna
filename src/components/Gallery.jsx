@@ -15,7 +15,6 @@ export default function Gallery() {
 
         {/* =========================================
             CANVAS GALLERY
-            RASIO 1024 : 1448
         ========================================= */}
 
         <div
@@ -28,7 +27,6 @@ export default function Gallery() {
 
           {/* =========================================
               FOTO 1
-              KIRI ATAS
           ========================================= */}
 
           <div
@@ -36,12 +34,24 @@ export default function Gallery() {
               absolute
               z-20
 
+              /* HP */
               left-[0%]
               top-[12.5%]
-
               w-[75%]
+
+              /* SM */
+              sm:left-[0%]
+              sm:top-[11%]
               sm:w-[80%]
+
+              /* MD */
+              md:left-[0%]
+              md:top-[10%]
               md:w-[90%]
+
+              /* LG */
+              lg:left-[0%]
+              lg:top-[9%]
               lg:w-[90%]
 
               rotate-[-11deg]
@@ -55,7 +65,6 @@ export default function Gallery() {
                 w-full
                 h-auto
                 object-contain
-                select-none
               "
               draggable={false}
             />
@@ -64,7 +73,6 @@ export default function Gallery() {
 
           {/* =========================================
               FOTO 5
-              KANAN ATAS
           ========================================= */}
 
           <div
@@ -72,13 +80,25 @@ export default function Gallery() {
               absolute
               z-10
 
-              left-[57%]
-              top-[0%]
+              /* HP */
+              left-[85%]
+              top-[20%]
+              w-[20%]
 
-              w-[75%]
-              sm:w-[80%]
-              md:w-[90%]
-              lg:w-[90%]
+              /* SM */
+              sm:left-[85%]
+              sm:top-[0%]
+              sm:w-[30%]
+
+              /* MD */
+              md:left-[85%]
+              md:top-[20%]
+              md:w-[30%]
+
+              /* LG */
+              lg:left-[85%]
+              lg:top-[20%]
+              lg:w-[30%]
 
               rotate-[3deg]
             "
@@ -91,7 +111,6 @@ export default function Gallery() {
                 w-full
                 h-auto
                 object-contain
-                select-none
               "
               draggable={false}
             />
@@ -100,7 +119,6 @@ export default function Gallery() {
 
           {/* =========================================
               FOTO 3
-              TENGAH
           ========================================= */}
 
           <div
@@ -108,13 +126,25 @@ export default function Gallery() {
               absolute
               z-50
 
-              left-[22%]
-              top-[8%]
+              /* HP */
+              left-[50%]
+              top-[30%]
+              w-[13%]
 
-              w-[75%]
-              sm:w-[80%]
-              md:w-[90%]
-              lg:w-[90%]
+              /* SM */
+              sm:left-[50%]
+              sm:top-[30%]
+              sm:w-[22%]
+
+              /* MD */
+              md:left-[50%]
+              md:top-[30%]
+              md:w-[22%]
+
+              /* LG */
+              lg:left-[50%]
+              lg:top-[30%]
+              lg:w-[22%]
 
               rotate-[7deg]
             "
@@ -127,7 +157,6 @@ export default function Gallery() {
                 w-full
                 h-auto
                 object-contain
-                select-none
               "
               draggable={false}
             />
@@ -136,7 +165,6 @@ export default function Gallery() {
 
           {/* =========================================
               FOTO 2
-              KIRI BAWAH
           ========================================= */}
 
           <div
@@ -144,13 +172,25 @@ export default function Gallery() {
               absolute
               z-40
 
-              left-[0%]
-              top-[24%]
+              /* HP */
+              left-[20%]
+              top-[50%]
+              w-[13%]
 
-              w-[75%]
-              sm:w-[80%]
-              md:w-[90%]
-              lg:w-[90%]
+              /* SM */
+              sm:left-[20%]
+              sm:top-[50%]
+              sm:w-[22%]
+
+              /* MD */
+              md:left-[20%]
+              md:top-[50%]
+              md:w-[22%]
+
+              /* LG */
+              lg:left-[20%]
+              lg:top-[50%]
+              lg:w-[22%]
 
               rotate-[-35deg]
             "
@@ -163,7 +203,6 @@ export default function Gallery() {
                 w-full
                 h-auto
                 object-contain
-                select-none
               "
               draggable={false}
             />
@@ -172,7 +211,6 @@ export default function Gallery() {
 
           {/* =========================================
               FOTO 4
-              KANAN BAWAH
           ========================================= */}
 
           <div
@@ -180,13 +218,25 @@ export default function Gallery() {
               absolute
               z-40
 
-              left-[28%]
-              top-[40%]
+              /* HP */
+              left-[58%]
+              top-[58%]
+              w-[13%]
 
-              w-[75%]
-              sm:w-[80%]
-              md:w-[90%]
-              lg:w-[90%]
+              /* SM */
+              sm:left-[58%]
+              sm:top-[58%]
+              sm:w-[22%]
+
+              /* MD */
+              md:left-[58%]
+              md:top-[58%]
+              md:w-[22%]
+
+              /* LG */
+              lg:left-[58%]
+              lg:top-[58%]
+              md:w-[22%]
 
               rotate-[8deg]
             "
@@ -199,7 +249,6 @@ export default function Gallery() {
                 w-full
                 h-auto
                 object-contain
-                select-none
               "
               draggable={false}
             />
@@ -215,21 +264,24 @@ export default function Gallery() {
               absolute
               z-[60]
 
+              /* HP */
               left-[90%]
-              top-[65%]
-
+              top-[50%]
               text-[7vw]
 
-              sm:left-[82%]
-              sm:top-[63%]
-              sm:text-[5vw]
+              /* SM */
+              sm:left-[90%]
+              sm:top-[50%]
+              sm:text-[5.5vw]
 
-              md:left-[75%]
-              md:top-[61%]
+              /* MD */
+              md:left-[90%]
+              md:top-[50%]
               md:text-[4.5vw]
 
-              lg:left-[70%]
-              lg:top-[60%]
+              /* LG */
+              lg:left-[90%]
+              lg:top-[50%]
               lg:text-[4vw]
 
               leading-none
