@@ -40,8 +40,10 @@ export default function Letter() {
         flex
         items-center
         justify-center
-        px-5
-        py-24
+        px-4
+        py-20
+        sm:px-6
+        sm:py-24
       "
     >
       <div
@@ -79,15 +81,17 @@ export default function Letter() {
             }}
             className="
               absolute
-              top-[35px]
+              top-2
               left-1/2
               -translate-x-1/2
               z-50
               w-full
-              text-red-500
-              text-sm
-              sm:text-base
-              tracking-[0.15em]
+              px-4
+              text-white
+              text-xs
+              sm:text-sm
+              tracking-[0.12em]
+              sm:tracking-[0.15em]
               text-center
             "
           >
@@ -103,37 +107,33 @@ export default function Letter() {
           {!opened && (
             <motion.div
               key="envelope"
-
               initial={{
                 opacity: 0,
                 scale: 0.8,
                 y: 40,
               }}
-
               animate={{
                 opacity: 1,
                 scale: 1,
                 y: 0,
               }}
-
               exit={{
                 opacity: 0,
                 scale: 0.85,
                 y: 60,
                 rotateX: 15,
               }}
-
               transition={{
                 duration: 0.7,
                 ease: "easeInOut",
               }}
-
               className="
                 absolute
                 z-30
-                w-full
-                h-[280px]
-                sm:h-[320px]
+                w-[88vw]
+                max-w-[440px]
+                min-w-[280px]
+                aspect-[1.55/1]
               "
             >
 
@@ -157,6 +157,9 @@ export default function Letter() {
                   rounded-2xl
                   shadow-2xl
                 "
+                style={{
+                  transformStyle: "preserve-3d",
+                }}
               >
 
                 {/* BADAN AMPLOP */}
@@ -257,15 +260,12 @@ export default function Letter() {
                 <motion.button
                   type="button"
                   onClick={() => setOpened(true)}
-
                   whileHover={{
                     scale: 1.08,
                   }}
-
                   whileTap={{
                     scale: 0.9,
                   }}
-
                   className="
                     absolute
                     z-50
@@ -273,8 +273,10 @@ export default function Letter() {
                     top-1/2
                     -translate-x-1/2
                     -translate-y-1/2
-                    w-16
-                    h-16
+                    w-[58px]
+                    h-[58px]
+                    xs:w-16
+                    xs:h-16
                     sm:w-20
                     sm:h-20
                     rounded-full
@@ -285,7 +287,8 @@ export default function Letter() {
                     flex
                     items-center
                     justify-center
-                    text-2xl
+                    text-xl
+                    sm:text-2xl
                     cursor-pointer
                     touch-manipulation
                   "
@@ -307,49 +310,49 @@ export default function Letter() {
           {opened && (
             <motion.div
               key="paper"
-
               initial={{
                 opacity: 0,
                 y: 100,
                 scale: 0.8,
                 rotateX: -20,
               }}
-
               animate={{
                 opacity: 1,
                 y: 0,
                 scale: 1,
                 rotateX: 0,
               }}
-
               transition={{
                 duration: 0.9,
                 delay: 0.45,
                 ease: "easeOut",
               }}
-
               className="
                 relative
                 z-20
-                w-[92%]
+                w-[92vw]
+                max-w-[440px]
                 min-h-[500px]
                 sm:min-h-[540px]
                 bg-[#fffdf8]
                 rounded-sm
                 shadow-2xl
-                px-7
-                py-10
+                px-5
+                py-8
                 sm:px-10
                 sm:py-12
               "
             >
 
-              {/* ORNAMEN */}
+              {/* =================================
+                  ORNAMEN
+              ================================= */}
 
               <div
                 className="
                   text-center
-                  text-3xl
+                  text-2xl
+                  sm:text-3xl
                   text-[#9b7777]
                   opacity-70
                 "
@@ -357,14 +360,17 @@ export default function Letter() {
                 ❀
               </div>
 
-              {/* JUDUL */}
+              {/* =================================
+                  JUDUL
+              ================================= */}
 
               <h2
                 className="
-                  mt-5
+                  mt-4
+                  sm:mt-5
                   text-center
                   font-title
-                  text-4xl
+                  text-3xl
                   sm:text-5xl
                   text-[#6b4c4c]
                 "
@@ -372,28 +378,36 @@ export default function Letter() {
                 Untukmu
               </h2>
 
-              {/* GARIS */}
+              {/* =================================
+                  GARIS
+              ================================= */}
 
               <div
                 className="
                   mx-auto
-                  mt-4
-                  mb-8
-                  w-20
+                  mt-3
+                  sm:mt-4
+                  mb-6
+                  sm:mb-8
+                  w-16
+                  sm:w-20
                   h-px
                   bg-[#c9a3a3]
                 "
               />
 
-              {/* TEXT */}
+              {/* =================================
+                  TEXT
+              ================================= */}
 
               <div
                 className="
                   text-[#4b3b3b]
                   font-text
-                  text-[15px]
+                  text-[14px]
                   sm:text-base
-                  leading-8
+                  leading-7
+                  sm:leading-8
                   text-center
                 "
               >
@@ -417,7 +431,9 @@ export default function Letter() {
                 )}
               </div>
 
-              {/* TANDA TANGAN */}
+              {/* =================================
+                  TANDA TANGAN
+              ================================= */}
 
               {typingFinished && (
                 <motion.div
@@ -433,16 +449,20 @@ export default function Letter() {
                     duration: 0.8,
                   }}
                   className="
-                    mt-8
+                    mt-7
+                    sm:mt-8
                     text-right
                     font-title
-                    text-3xl
+                    text-2xl
+                    sm:text-3xl
                     text-[#6b4c4c]
                     relative
-                    right-6
+                    right-[20px]
+                    sm:right-[30px]
                   "
                 >
-                  
+                  Untukmu,
+                  <br />
                   Topik
                 </motion.div>
               )}
@@ -471,9 +491,12 @@ export default function Letter() {
             className="
               absolute
               -bottom-2
-              text-red-500
-              text-xs
-              tracking-[0.15em]
+              w-full
+              text-white/80
+              text-[10px]
+              sm:text-xs
+              tracking-[0.12em]
+              sm:tracking-[0.15em]
               text-center
             "
           >
