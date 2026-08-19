@@ -162,7 +162,7 @@ export default function Gallery() {
 
           left-[40%]
           top-[30%]
-          w-[30%]
+          w-[18%]
 
           sm:left-[40%]
           sm:top-[30%]
@@ -205,7 +205,7 @@ export default function Gallery() {
 
           left-[7%]
           top-[50%]
-          w-[13%]
+          w-[22%]
 
           sm:left-[7%]
           sm:top-[50%]
@@ -248,7 +248,7 @@ export default function Gallery() {
 
           left-[45%]
           top-[67%]
-          w-[13%]
+          w-[22%]
 
           sm:left-[45%]
           sm:top-[67%]
