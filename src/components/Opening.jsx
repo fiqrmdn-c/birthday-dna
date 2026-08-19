@@ -3,51 +3,78 @@
 import { useState } from "react";
 
 import GiftBox from "./GiftBox";
-import Music from "./Music";
 import FlowerTransition from "./FlowerTransition";
-import Letter from "./Letter";
 
-export default function Opening() {
-  const [opened, setOpened] = useState(false);
-  const [playMusic, setPlayMusic] = useState(false);
+export default function Opening({ onMusicStart }) {
   const [showFlower, setShowFlower] = useState(false);
-  const [backgroundLetter, setBackgroundLetter] = useState(false);
+  const [changeBackground, setChangeBackground] = useState(false);
+  const [closing, setClosing] = useState(false);
+  const [finished, setFinished] = useState(false);
+
+  // =========================
+  // KADO DIBUKA
+  // =========================
 
   const handleOpenGift = () => {
-    setPlayMusic(true);
+    // Mulai musik
+    onMusicStart?.();
+
+    // Mulai FlowerWave
     setShowFlower(true);
+
+    // Background halaman berikutnya
+    // mulai muncul saat FlowerWave berlangsung
+    setTimeout(() => {
+      setChangeBackground(true);
+    }, 5000);
   };
+
+  // =========================
+  // FLOWER SELESAI
+  // =========================
 
   const handleFlowerComplete = () => {
     console.log("FLOWER FINISHED");
 
+    // Hilangkan flower
     setShowFlower(false);
-    setOpened(true);
+
+    // Mulai fade out Opening
+    setClosing(true);
+
+    // Tunggu fade selesai
+    setTimeout(() => {
+      setFinished(true);
+    }, 500);
   };
 
+  // =========================
+  // OPENING SELESAI
+  // =========================
+
+  if (finished) {
+    return null;
+  }
+
   return (
-    <div className="relative w-full min-h-screen overflow-hidden">
+    <div
+      className={`
+        fixed
+        inset-0
+        z-[100]
+        w-full
+        h-screen
+        overflow-hidden
+        transition-opacity
+        duration-[700ms]
+        ease-in-out
+        ${closing ? "opacity-0" : "opacity-100"}
+      `}
+    >
 
-      {/* ================= BACKGROUND OPENING ================= */}
-
-      <div
-        className={`
-          absolute
-          inset-0
-          bg-cover
-          bg-center
-          bg-no-repeat
-          transition-all
-          duration-1000
-          ease-in-out
-          ${backgroundLetter ? "opacity-0 scale-105" : "opacity-100 scale-100"}
-        `}
-        style={{
-          backgroundImage: "url('/images/background.jpg')",
-        }}
-      />
-
-      {/* ================= BACKGROUND LETTER ================= */}
+      {/* =================================
+          BACKGROUND OPENING
+      ================================= */}
 
       <div
         className={`
@@ -56,43 +83,46 @@ export default function Opening() {
           bg-cover
           bg-center
           bg-no-repeat
-          transition-all
-          duration-1000
+          transition-opacity
+          duration-[1800ms]
           ease-in-out
-          ${backgroundLetter ? "opacity-100 scale-100" : "opacity-0 scale-105"}
+          ${changeBackground ? "opacity-0" : "opacity-100"}
         `}
         style={{
-          backgroundImage: "url('/images/backgroundletter.png')",
+          backgroundImage:
+            "url('/images/background.jpg')",
         }}
       />
 
-      {/* ================= SELURUH ISI WEBSITE ================= */}
+      {/* =================================
+          ISI OPENING
+      ================================= */}
 
-      <div className="relative z-20">
+      <div className="relative z-20 w-full h-full">
 
-        <Music play={playMusic} />
+        {/* =================================
+            FLOWER TRANSITION
+        ================================= */}
 
         <FlowerTransition
           show={showFlower}
           onBackgroundChange={() => {
-            console.log("CHANGE BACKGROUND");
-            setBackgroundLetter(true);
+            console.log("FLOWER BACKGROUND POINT");
           }}
           onComplete={handleFlowerComplete}
         />
 
-        {!opened && (
-          <GiftBox onOpen={handleOpenGift} />
-        )}
+        {/* =================================
+            GIFT BOX
+        ================================= */}
 
-        {opened && (
-          <div className="relative z-30 h-screen overflow-y-auto">
-            <Letter />
-          </div>
+        {!showFlower && !closing && (
+          <GiftBox
+            onOpen={handleOpenGift}
+          />
         )}
 
       </div>
-
     </div>
   );
 }
