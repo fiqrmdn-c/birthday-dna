@@ -91,8 +91,8 @@ export default function Letter() {
               z-50
               w-full
               px-4
-              text-white
-              text-xs
+              text-red-400
+              text-5xs
               sm:text-sm
               tracking-[0.12em]
               sm:tracking-[0.15em]
