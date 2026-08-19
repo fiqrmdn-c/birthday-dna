@@ -329,7 +329,7 @@ export default function Gallery() {
           z-[30]
           select-none
 
-          left-[28%]
+          left-[29.5%]
           top-[18%]
           w-[70%]
 
@@ -360,7 +360,7 @@ export default function Gallery() {
 
           left-[70%]
           top-[34%]
-          text-[7vw]
+          text-[4vw]
 
           sm:left-[74%]
           sm:top-[58%]
