@@ -409,6 +409,8 @@ export default function Letter() {
                   leading-7
                   sm:leading-8
                   text-center
+                  w-[85%]
+                  mx-auto
                 "
               >
                 {displayText}
