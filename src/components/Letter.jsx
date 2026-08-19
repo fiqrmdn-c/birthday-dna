@@ -130,7 +130,7 @@ export default function Letter() {
               className="
                 absolute
                 z-30
-                w-[88vw]
+                w-[75vw]
                 max-w-[440px]
                 min-w-[280px]
                 aspect-[1.55/1]
@@ -330,7 +330,7 @@ export default function Letter() {
               className="
                 relative
                 z-20
-                w-[92vw]
+                w-[75vw]
                 max-w-[440px]
                 min-h-[500px]
                 sm:min-h-[540px]
