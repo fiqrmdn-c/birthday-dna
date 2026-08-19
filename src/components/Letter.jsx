@@ -29,7 +29,7 @@ export default function Letter() {
         clearInterval(timer);
         setTypingFinished(true);
       }
-    }, 35);
+    }, 20);
 
     return () => clearInterval(timer);
   }, [opened]);
@@ -500,7 +500,7 @@ export default function Letter() {
               absolute
               -bottom-2
               w-full
-              text-white/80
+              text-red-400
               text-[10px]
               sm:text-xs
               tracking-[0.12em]
