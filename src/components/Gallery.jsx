@@ -295,8 +295,8 @@ export default function Gallery() {
           select-none
 
           left-[10%]
-          top-[28%]
-          w-[90%]
+          top-[36%]
+          w-[70%]
 
           sm:left-[10%]
           sm:top-[45%]
