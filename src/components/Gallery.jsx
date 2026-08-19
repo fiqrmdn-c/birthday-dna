@@ -44,7 +44,7 @@ export default function Gallery() {
           z-[5]
           select-none
 
-          left-[-5%]
+          left-[5%]
           top-[8%]
           w-[50%]
 
