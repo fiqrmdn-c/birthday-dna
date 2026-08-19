@@ -11,6 +11,10 @@ export default function Letter() {
   const [displayText, setDisplayText] = useState("");
   const [typingFinished, setTypingFinished] = useState(false);
 
+  // =================================
+  // EFEK MENGETIK
+  // =================================
+
   useEffect(() => {
     if (!opened) return;
 
@@ -275,8 +279,6 @@ export default function Letter() {
                     -translate-y-1/2
                     w-[58px]
                     h-[58px]
-                    xs:w-16
-                    xs:h-16
                     sm:w-20
                     sm:h-20
                     rounded-full
@@ -297,13 +299,12 @@ export default function Letter() {
                 </motion.button>
 
               </motion.div>
-
             </motion.div>
           )}
         </AnimatePresence>
 
         {/* =================================
-            SURAT
+            KERTAS SURAT
         ================================= */}
 
         <AnimatePresence>
@@ -337,9 +338,9 @@ export default function Letter() {
                 bg-[#fffdf8]
                 rounded-sm
                 shadow-2xl
-                px-10
+                px-22
                 py-8
-                sm:px-14
+                sm:px-28
                 sm:py-12
               "
             >
@@ -350,6 +351,7 @@ export default function Letter() {
 
               <div
                 className="
+                  w-full
                   text-center
                   text-2xl
                   sm:text-3xl
@@ -366,14 +368,17 @@ export default function Letter() {
 
               <h2
                 className="
+                  w-full
                   mt-4
                   sm:mt-5
-                  text-center
                   font-title
                   text-3xl
                   sm:text-5xl
                   text-[#6b4c4c]
                 "
+                style={{
+                  textAlign: "center",
+                }}
               >
                 Untukmu
               </h2>
@@ -397,37 +402,24 @@ export default function Letter() {
               />
 
               {/* =================================
-                  TEXT
+                  ISI SURAT
               ================================= */}
 
-            <div className="w-[85%] mx-auto">
               <div
                 className="
+                  w-full
                   text-[#4b3b3b]
                   font-text
                   text-[14px]
                   sm:text-base
                   leading-7
                   sm:leading-8
-                  text-center
                 "
+                style={{
+                  textAlign: "center",
+                }}
               >
                 {displayText}
-
-                {opened && !typingFinished && (
-                  <motion.span
-                    animate={{
-                      oppacity: [1, 0, 1],
-                    }}
-                    transition={{duration: 0.7, repeat: Infinity}}
-                    className="ml-1"
-                  >
-                    |
-                  </motion.span>
-                )}
-              </div>
-            </div>
-                    }
 
                 {/* CURSOR */}
 
@@ -467,17 +459,17 @@ export default function Letter() {
                   className="
                     mt-7
                     sm:mt-8
-                    text-right
                     font-title
                     text-2xl
                     sm:text-3xl
                     text-[#6b4c4c]
-                    relative
-                    right-[20px]
-                    sm:right-[30px]
                   "
+                  style={{
+                    textAlign: "right",
+                    paddingRight: "20px",
+                  }}
                 >
-                  Untukmu,
+                  
                   <br />
                   Topik
                 </motion.div>
