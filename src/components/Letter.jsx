@@ -400,6 +400,7 @@ export default function Letter() {
                   TEXT
               ================================= */}
 
+            <div className="w-[85%] mx-auto">
               <div
                 className="
                   text-[#4b3b3b]
@@ -409,11 +410,24 @@ export default function Letter() {
                   leading-7
                   sm:leading-8
                   text-center
-                  w-[85%]
-                  mx-auto
                 "
               >
                 {displayText}
+
+                {opened && !typingFinished && (
+                  <motion.span
+                    animate={{
+                      oppacity: [1, 0, 1],
+                    }}
+                    transition={{duration: 0.7, repeat: Infinity}}
+                    className="ml-1"
+                  >
+                    |
+                  </motion.span>
+                )}
+              </div>
+            </div>
+                    }
 
                 {/* CURSOR */}
 
