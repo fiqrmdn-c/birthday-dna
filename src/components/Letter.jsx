@@ -501,8 +501,8 @@ export default function Letter() {
               -bottom-2
               w-full
               text-red-400
-              text-[10px]
-              sm:text-xs
+              text-[18px]
+              sm:text-5xs
               tracking-[0.12em]
               sm:tracking-[0.15em]
               text-center
