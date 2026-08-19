@@ -8,6 +8,12 @@ const photos = [
   "/images/foto5.png",
 ];
 
+const galleryFlower = [
+  "/images/galleryflower1.png",
+  "/images/galleryflower2.png",
+  "/images/galleryflower3.png",
+];
+
 export default function Gallery() {
   return (
     <section
@@ -25,6 +31,41 @@ export default function Gallery() {
     >
 
       {/* =========================================
+          FLOWER 1
+          KIRI ATAS
+      ========================================= */}
+
+      <img
+        src={galleryFlower[0]}
+        alt=""
+        draggable={false}
+        className="
+          absolute
+          z-[5]
+          select-none
+
+          left-[-5%]
+          top-[8%]
+          w-[50%]
+
+          sm:left-[5%]
+          sm:top-[8%]
+          sm:w-[50%]
+
+          md:left-[5%]
+          md:top-[8%]
+          md:w-[50%]
+
+          lg:left-[5%]
+          lg:top-[8%]
+          lg:w-[50%]
+
+          rotate-[-15deg]
+        "
+      />
+
+
+      {/* =========================================
           FOTO 1
       ========================================= */}
 
@@ -33,22 +74,18 @@ export default function Gallery() {
           absolute
           z-20
 
-          /* HP */
           left-[25%]
           top-[18%]
           w-[18%]
 
-          /* SM */
           sm:left-[25%]
           sm:top-[18%]
           sm:w-[18%]
 
-          /* MD */
           md:left-[25%]
           md:top-[18%]
           md:w-[18%]
 
-          /* LG */
           lg:left-[25%]
           lg:top-[18%]
           lg:w-[18%]
@@ -80,22 +117,18 @@ export default function Gallery() {
           absolute
           z-10
 
-          /* HP */
           left-[58%]
           top-[16%]
           w-[30%]
 
-          /* SM */
           sm:left-[58%]
           sm:top-[16%]
           sm:w-[30%]
 
-          /* MD */
           md:left-[58%]
           md:top-[16%]
           md:w-[30%]
 
-          /* LG */
           lg:left-[58%]
           lg:top-[16%]
           lg:w-[30%]
@@ -127,22 +160,18 @@ export default function Gallery() {
           absolute
           z-50
 
-          /* HP */
           left-[40%]
           top-[30%]
           w-[13%]
 
-          /* SM */
           sm:left-[40%]
           sm:top-[30%]
           sm:w-[22%]
 
-          /* MD */
           md:left-[40%]
           md:top-[30%]
           md:w-[22%]
 
-          /* LG */
           lg:left-[40%]
           lg:top-[30%]
           lg:w-[22%]
@@ -174,22 +203,18 @@ export default function Gallery() {
           absolute
           z-40
 
-          /* HP */
           left-[7%]
           top-[50%]
           w-[13%]
 
-          /* SM */
           sm:left-[7%]
           sm:top-[50%]
           sm:w-[22%]
 
-          /* MD */
           md:left-[7%]
           md:top-[50%]
           md:w-[22%]
 
-          /* LG */
           lg:left-[7%]
           lg:top-[50%]
           lg:w-[22%]
@@ -221,22 +246,18 @@ export default function Gallery() {
           absolute
           z-40
 
-          /* HP */
           left-[45%]
           top-[67%]
           w-[13%]
 
-          /* SM */
           sm:left-[45%]
           sm:top-[67%]
           sm:w-[22%]
 
-          /* MD */
           md:left-[45%]
           md:top-[67%]
           md:w-[22%]
 
-          /* LG */
           lg:left-[45%]
           lg:top-[67%]
           lg:w-[22%]
@@ -260,6 +281,75 @@ export default function Gallery() {
 
 
       {/* =========================================
+          FLOWER 2
+          KIRI BAWAH
+      ========================================= */}
+
+      <img
+        src={galleryFlower[1]}
+        alt=""
+        draggable={false}
+        className="
+          absolute
+          z-[30]
+          select-none
+
+          left-[10%]
+          top-[45%]
+          w-[50%]
+
+          sm:left-[10%]
+          sm:top-[45%]
+          sm:w-[50%]
+
+          md:left-[10%]
+          md:top-[45%]
+          md:w-[50%]
+
+          lg:left-[10%]
+          lg:top-[45%]
+          lg:w-[50%]
+
+          rotate-[18deg]
+        "
+      />
+
+
+      {/* =========================================
+          FLOWER 3
+          KANAN BAWAH
+      ========================================= */}
+
+      <img
+        src={galleryFlower[2]}
+        alt=""
+        draggable={false}
+        className="
+          absolute
+          z-[30]
+          select-none
+
+          left-[30%]
+          top-[14%]
+          w-[70%]
+
+          sm:left-[30%]
+          sm:top-[14%]
+          sm:w-[70%]
+
+          md:left-[30%]
+          md:top-[14%]
+          md:w-[70%]
+
+          lg:left-[30%]
+          lg:top-[14%]
+          lg:w-[70%]
+
+        "
+      />
+
+
+      {/* =========================================
           JUDUL GALLERY
       ========================================= */}
 
@@ -268,22 +358,18 @@ export default function Gallery() {
           absolute
           z-[60]
 
-          /* HP */
           left-[74%]
           top-[58%]
           text-[7vw]
 
-          /* SM */
           sm:left-[74%]
           sm:top-[58%]
           sm:text-[5.5vw]
 
-          /* MD */
           md:left-[74%]
           md:top-[58%]
           md:text-[4.5vw]
 
-          /* LG */
           lg:left-[74%]
           lg:top-[58%]
           lg:text-[4vw]
