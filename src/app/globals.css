@@ -1,12 +1,35 @@
 @import "tailwindcss";
 
+/* =========================================
+   FONT
+========================================= */
+
+@font-face {
+  font-family: "LondrinaShadow";
+  src: url("/fonts/LondrinaShadow-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* =========================================
+   ROOT
+========================================= */
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
 
   --font-title: "Great Vibes", cursive;
   --font-text: "Poppins", sans-serif;
+  --font-gallery: "LondrinaShadow", cursive;
 }
+
+
+/* =========================================
+   TAILWIND THEME
+========================================= */
 
 @theme inline {
   --color-background: var(--background);
@@ -14,7 +37,13 @@
 
   --font-sans: var(--font-text);
   --font-title: var(--font-title);
+  --font-gallery: var(--font-gallery);
 }
+
+
+/* =========================================
+   DARK MODE
+========================================= */
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -23,11 +52,21 @@
   }
 }
 
+
+/* =========================================
+   RESET
+========================================= */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+
+/* =========================================
+   HTML & BODY
+========================================= */
 
 html,
 body {
@@ -36,6 +75,7 @@ body {
   scroll-behavior: smooth;
 }
 
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -43,34 +83,86 @@ body {
   overflow-x: hidden;
 }
 
+
+/* =========================================
+   FONT TITLE
+   Great Vibes
+========================================= */
+
 .font-title {
   font-family: var(--font-title);
 }
+
+
+/* =========================================
+   FONT TEXT
+   Poppins
+========================================= */
 
 .font-text {
   font-family: var(--font-text);
 }
 
+
+/* =========================================
+   FONT GALLERY
+   Londrina Shadow
+========================================= */
+
+.font-gallery {
+  font-family: var(--font-gallery);
+}
+
+
+/* =========================================
+   TEXT SHADOW
+========================================= */
+
 .text-shadow {
   text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 }
+
+
+/* =========================================
+   GLASS EFFECT
+========================================= */
 
 .glass {
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(12px);
 }
 
+
+/* =========================================
+   FADE IN
+========================================= */
+
 .fade-in {
   animation: fadeIn 1s ease forwards;
 }
+
+
+/* =========================================
+   FLOATING
+========================================= */
 
 .float {
   animation: floating 3s ease-in-out infinite;
 }
 
+
+/* =========================================
+   PULSE GLOW
+========================================= */
+
 .pulse-glow {
   animation: glow 2s infinite;
 }
+
+
+/* =========================================
+   ANIMATION FLOATING
+========================================= */
 
 @keyframes floating {
   0% {
@@ -86,6 +178,11 @@ body {
   }
 }
 
+
+/* =========================================
+   ANIMATION FADE IN
+========================================= */
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -97,6 +194,11 @@ body {
     transform: translateY(0);
   }
 }
+
+
+/* =========================================
+   ANIMATION GLOW
+========================================= */
 
 @keyframes glow {
   0% {

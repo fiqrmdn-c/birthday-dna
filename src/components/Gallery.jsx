@@ -331,8 +331,10 @@ export default function Gallery() {
           leading-none
           text-black
           whitespace-nowrap
-          font-title
         "
+        style={{
+          fontFamily: "LondrinaShadow",
+        }}
       >
         Gallery
       </h2>
