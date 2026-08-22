@@ -75,7 +75,7 @@ export default function Gallery() {
           bottom-[-50]
           left-18
 
-          w-74
+          w-22
           sm:w-60
           md:w-60
           lg:w-65
