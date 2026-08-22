@@ -33,6 +33,7 @@ export default function Gallery() {
       {/* =========================================
           FLOWER 1
           KIRI ATAS
+          MENYERUPAI BUNGA HERO KIRI ATAS
       ========================================= */}
 
       <img
@@ -42,25 +43,48 @@ export default function Gallery() {
         className="
           absolute
           z-[5]
+          top-0
+          left-0
+
+          w-68
+          sm:w-80
+          md:w-80
+          lg:w-80
+
+          h-auto
+
+          pointer-events-none
           select-none
+        "
+      />
 
-          left-[5%]
-          top-[8%]
-          w-[75%]
 
-          sm:left-[5%]
-          sm:top-[8%]
-          sm:w-[50%]
+      {/* =========================================
+          FLOWER 3
+          KANAN BAWAH
+          MENYERUPAI BUNGA HERO KANAN BAWAH
+      ========================================= */}
 
-          md:left-[5%]
-          md:top-[8%]
-          md:w-[50%]
+      <img
+        src={galleryFlower[2]}
+        alt=""
+        draggable={false}
+        className="
+          absolute
+          z-[30]
 
-          lg:left-[5%]
-          lg:top-[8%]
-          lg:w-[50%]
+          bottom-15
+          right-0
 
-          rotate-[-15deg]
+          w-74
+          sm:w-80
+          md:w-80
+          lg:w-80
+
+          h-auto
+
+          pointer-events-none
+          select-none
         "
       />
 
@@ -278,75 +302,6 @@ export default function Gallery() {
           draggable={false}
         />
       </div>
-
-
-      {/* =========================================
-          FLOWER 2
-          KIRI BAWAH
-      ========================================= */}
-
-      <img
-        src={galleryFlower[1]}
-        alt=""
-        draggable={false}
-        className="
-          absolute
-          z-[30]
-          select-none
-
-          left-[10%]
-          top-[22%]
-          w-[70%]
-
-          sm:left-[10%]
-          sm:top-[45%]
-          sm:w-[50%]
-
-          md:left-[10%]
-          md:top-[45%]
-          md:w-[50%]
-
-          lg:left-[10%]
-          lg:top-[45%]
-          lg:w-[50%]
-
-          rotate-[18deg]
-        "
-      />
-
-
-      {/* =========================================
-          FLOWER 3
-          KANAN BAWAH
-      ========================================= */}
-
-      <img
-        src={galleryFlower[2]}
-        alt=""
-        draggable={false}
-        className="
-          absolute
-          z-[30]
-          select-none
-
-          left-[29.5%]
-          top-[18%]
-          w-[70%]
-
-          sm:left-[30%]
-          sm:top-[14%]
-          sm:w-[70%]
-
-          md:left-[30%]
-          md:top-[14%]
-          md:w-[70%]
-
-          lg:left-[30%]
-          lg:top-[14%]
-          lg:w-[70%]
-
-        "
-      />
 
 
       {/* =========================================
