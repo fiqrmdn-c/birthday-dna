@@ -72,7 +72,11 @@ export default function Gallery() {
           absolute
           z-[30]
 
-          bottom-0
+          bottom-15
+          sm:bottom-0
+          md:bottom-0
+          lg:bottom-0
+          
           left-18
 
           w-30
