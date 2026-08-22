@@ -314,7 +314,7 @@ export default function Gallery() {
 
           left-[70%]
           top-[32%]
-          text-[5vw]
+          text-[12vw]
 
           sm:left-[74%]
           sm:top-[58%]
