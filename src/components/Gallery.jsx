@@ -46,10 +46,10 @@ export default function Gallery() {
           top-0
           left-0
 
-          w-68
-          sm:w-80
-          md:w-80
-          lg:w-80
+          w-80
+          sm:w-150
+          md:w-150
+          lg:w-150
 
           h-auto
 
