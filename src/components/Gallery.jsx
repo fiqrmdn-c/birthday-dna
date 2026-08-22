@@ -98,11 +98,11 @@ export default function Gallery() {
           absolute
           z-20
 
-          left-[25%]
+          left-[29%]
           top-[18%]
           w-[25%]
 
-          sm:left-[25%]
+          sm:left-[29%]
           sm:top-[18%]
           sm:w-[25%]
 
@@ -142,11 +142,11 @@ export default function Gallery() {
           z-10
 
           left-[58%]
-          top-[16%]
+          top-[12%]
           w-[30%]
 
           sm:left-[58%]
-          sm:top-[16%]
+          sm:top-[12%]
           sm:w-[30%]
 
           md:left-[58%]
@@ -184,7 +184,7 @@ export default function Gallery() {
           absolute
           z-50
 
-          left-[38%]
+          left-[44%]
           top-[25%]
           w-[22%]
 
