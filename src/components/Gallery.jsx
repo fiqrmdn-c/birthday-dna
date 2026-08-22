@@ -59,41 +59,6 @@ export default function Gallery() {
       />
 
       {/* =========================================
-          FLOWER 2
-          KIRI BAWAH
-          MENYERUPAI BUNGA HERO KIRI BAWAH
-      ========================================= */}
-
-      <img
-        src={galleryFlower[1]}
-        alt=""
-        draggable={false}
-        className="
-          absolute
-          z-[30]
-
-          bottom-30
-          sm:bottom-0
-          md:bottom-0
-          lg:bottom-0
-
-          left-18
-
-          w-30
-          sm:w-60
-          md:w-60
-          lg:w-65
-
-          h-auto
-
-          rotate-[-90deg]
-
-          pointer-events-none
-          select-none
-        "
-      />
-
-      {/* =========================================
           FLOWER 3
           KANAN BAWAH
           MENYERUPAI BUNGA HERO KANAN BAWAH
@@ -107,7 +72,7 @@ export default function Gallery() {
           absolute
           z-[30]
 
-          bottom-0
+          bottom-20
           right-0
 
           w-70
