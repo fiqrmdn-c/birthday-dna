@@ -73,13 +73,13 @@ export default function Gallery() {
           absolute
           z-[30]
 
-          bottom-15
+          bottom-0
           right-0
 
           w-74
           sm:w-80
           md:w-80
-          lg:w-80
+          lg:w-100
 
           h-auto
 
@@ -100,11 +100,11 @@ export default function Gallery() {
 
           left-[25%]
           top-[18%]
-          w-[18%]
+          w-[25%]
 
           sm:left-[25%]
           sm:top-[18%]
-          sm:w-[18%]
+          sm:w-[25%]
 
           md:left-[25%]
           md:top-[18%]
