@@ -331,10 +331,8 @@ export default function Gallery() {
           leading-none
           text-black
           whitespace-nowrap
+          font-title
         "
-        style={{
-          fontFamily: "GreatVibes",
-        }}
       >
         Gallery
       </h2>
