@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 import GiftBox from "./GiftBox";
 import FlowerTransition from "./FlowerTransition";
@@ -12,59 +13,64 @@ export default function Opening({ onMusicStart }) {
   const [finished, setFinished] = useState(false);
   const [scrollLocked, setScrollLocked] = useState(true);
 
-  // =========================
+  // =========================================
   // KONTROL SCROLL
-  // =========================
+  // =========================================
 
   useEffect(() => {
-    document.body.style.overflow = scrollLocked
-      ? "hidden"
-      : "";
+    if (scrollLocked) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
 
     return () => {
       document.body.style.overflow = "";
     };
   }, [scrollLocked]);
 
-  // =========================
+  // =========================================
   // KADO DIBUKA
-  // =========================
+  // =========================================
 
   const handleOpenGift = () => {
     onMusicStart?.();
 
     setShowFlower(true);
 
+    // Background mulai berubah ketika
+    // FlowerWave sudah berjalan beberapa saat
     setTimeout(() => {
       setChangeBackground(true);
     }, 5000);
   };
 
-  // =========================
+  // =========================================
   // FLOWER SELESAI
-  // =========================
+  // =========================================
 
   const handleFlowerComplete = () => {
     console.log("FLOWER FINISHED");
 
-    // Hilangkan bunga
+    // Hilangkan FlowerTransition
     setShowFlower(false);
 
-    // BUKA SCROLL SEKARANG
+    // Buka scroll halaman utama
     setScrollLocked(false);
 
-    // MULAI FADE OUT
+    // Mulai fade out Opening
     setClosing(true);
 
-    // Tunggu fade selesai
+    // Setelah fade selesai,
+    // hapus Opening dari layar
     setTimeout(() => {
       setFinished(true);
     }, 700);
   };
 
-  // =========================
+  // =========================================
   // OPENING SELESAI
-  // =========================
+  // =========================================
 
   if (finished) {
     return null;
@@ -82,11 +88,17 @@ export default function Opening({ onMusicStart }) {
         transition-opacity
         duration-[700ms]
         ease-in-out
-        ${closing ? "opacity-0" : "opacity-100"}
+        ${
+          closing
+            ? "opacity-0 pointer-events-none"
+            : "opacity-100"
+        }
       `}
     >
 
-      {/* BACKGROUND OPENING */}
+      {/* =========================================
+          BACKGROUND OPENING
+      ========================================= */}
 
       <div
         className={`
@@ -98,7 +110,11 @@ export default function Opening({ onMusicStart }) {
           transition-opacity
           duration-[1800ms]
           ease-in-out
-          ${changeBackground ? "opacity-0" : "opacity-100"}
+          ${
+            changeBackground
+              ? "opacity-0"
+              : "opacity-100"
+          }
         `}
         style={{
           backgroundImage:
@@ -106,21 +122,31 @@ export default function Opening({ onMusicStart }) {
         }}
       />
 
-      {/* ISI OPENING */}
+      {/* =========================================
+          ISI OPENING
+      ========================================= */}
 
       <div className="relative z-20 w-full h-full">
 
-        {/* FLOWER */}
+        {/* =========================================
+            FLOWER WAVE / FLOWER TRANSITION
+        ========================================= */}
 
-        <FlowerTransition
-          show={showFlower}
-          onBackgroundChange={() => {
-            console.log("FLOWER BACKGROUND POINT");
-          }}
-          onComplete={handleFlowerComplete}
-        />
+        <AnimatePresence>
+          {showFlower && (
+            <FlowerTransition
+              show={showFlower}
+              onBackgroundChange={() => {
+                console.log("FLOWER BACKGROUND POINT");
+              }}
+              onComplete={handleFlowerComplete}
+            />
+          )}
+        </AnimatePresence>
 
-        {/* KADO */}
+        {/* =========================================
+            GIFT BOX
+        ========================================= */}
 
         {!showFlower && !closing && (
           <GiftBox
