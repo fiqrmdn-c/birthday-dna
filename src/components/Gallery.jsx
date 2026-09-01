@@ -226,8 +226,8 @@ export default function Gallery() {
           absolute
           z-40
 
-          left-[0%]
-          top-[65%]
+          left-[4%]
+          top-[60%]
           w-[33%]
 
           sm:left-[7%]
