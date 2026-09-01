@@ -99,7 +99,7 @@ export default function Footer() {
             absolute
             left-1/2
             -translate-x-1/2
-            -bottom-8
+            -bottom-14
             whitespace-nowrap
             text-[#6b4c4c]
             text-xs
