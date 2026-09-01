@@ -107,11 +107,11 @@ export default function Gallery() {
 
           md:left-[25%]
           md:top-[18%]
-          md:w-[18%]
+          md:w-[22%]
 
-          lg:left-[25%]
+          lg:left-[22%]
           lg:top-[18%]
-          lg:w-[18%]
+          lg:w-[28%]
 
           rotate-[-11deg]
         "
@@ -185,19 +185,19 @@ export default function Gallery() {
 
           left-[44%]
           top-[17%]
-          w-[22%]
+          w-[25%]
 
           sm:left-[40%]
           sm:top-[30%]
-          sm:w-[22%]
+          sm:w-[25%]
 
           md:left-[40%]
           md:top-[30%]
-          md:w-[22%]
+          md:w-[25%]
 
           lg:left-[40%]
           lg:top-[30%]
-          lg:w-[22%]
+          lg:w-[25%]
 
           rotate-[7deg]
         "

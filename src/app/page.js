@@ -1,23 +1,21 @@
 "use client";
 
-import { useState } from "react";
-
 import Opening from "@/components/Opening";
-import Music from "@/components/Music";
 import Hero from "@/components/Hero";
 import Letter from "@/components/Letter";
 import Gallery from "@/components/Gallery";
 import Footer from "@/components/Footer";
 
+import { useMusic } from "./MusicProvider";
+
 export default function Home() {
-  const [playMusic, setPlayMusic] = useState(false);
+  const { startMusic } = useMusic();
 
   return (
     <div className="relative min-h-screen">
 
       {/* =====================================
           BACKGROUND HALAMAN UTAMA
-          TETAP DIAM SAAT SCROLL
       ====================================== */}
 
       <div
@@ -40,21 +38,11 @@ export default function Home() {
       />
 
       {/* =====================================
-          MUSIC
-          Tetap hidup dari Opening sampai Footer
-      ====================================== */}
-
-      <Music play={playMusic} />
-
-      {/* =====================================
           OPENING
-          Kado → Musik → FlowerWave
       ====================================== */}
 
       <Opening
-        onMusicStart={() => {
-          setPlayMusic(true);
-        }}
+        onMusicStart={startMusic}
       />
 
       {/* =====================================
@@ -63,27 +51,19 @@ export default function Home() {
 
       <main className="relative z-10 min-h-screen">
 
-        {/* =================================
-            HERO
-        ================================== */}
+        {/* HERO */}
 
         <Hero />
 
-        {/* =================================
-            LETTER
-        ================================== */}
+        {/* LETTER */}
 
         <Letter />
 
-        {/* =================================
-            GALLERY
-        ================================== */}
+        {/* GALLERY */}
 
         <Gallery />
 
-        {/* =================================
-            FOOTER
-        ================================== */}
+        {/* FOOTER */}
 
         <Footer />
 

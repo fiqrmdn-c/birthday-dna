@@ -5,6 +5,7 @@ import {
 } from "next/font/google";
 
 import "./globals.css";
+import { MusicProvider } from "./MusicProvider";
 
 const greatVibes = Great_Vibes({
   variable: "--font-great-vibes",
@@ -35,7 +36,11 @@ export default function RootLayout({ children }) {
       lang="id"
       className={`${greatVibes.variable} ${cormorant.variable} ${poppins.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <MusicProvider>
+          {children}
+        </MusicProvider>
+      </body>
     </html>
   );
 }

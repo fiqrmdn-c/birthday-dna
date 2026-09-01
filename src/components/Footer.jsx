@@ -108,7 +108,8 @@ export default function Footer() {
             pointer-events-none
           "
         >
-          KLIK BUNGA
+          KLIK BUNGA KALO KANGEN
+        
         </motion.p>
       </motion.button>
 

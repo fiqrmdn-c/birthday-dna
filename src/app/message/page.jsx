@@ -3,15 +3,21 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
+import { useMusic } from "../MusicProvider";
 
 const messageText =
   "Terima kasih sudah menjadi bagian dari cerita ini. Semoga di usia yang baru, semakin banyak hal baik yang datang kepadamu. Semoga setiap langkah yang kamu ambil membawa kamu lebih dekat dengan semua hal yang kamu impikan. Tetap menjadi dirimu sendiri, tetap tersenyum, dan nikmati setiap proses yang sedang kamu jalani.";
 
 export default function MessagePage() {
   const router = useRouter();
+  const { stopMusic } = useMusic();
 
   const [displayText, setDisplayText] = useState("");
   const [typingFinished, setTypingFinished] = useState(false);
+
+  // =========================================
+  // TYPING ANIMATION
+  // =========================================
 
   useEffect(() => {
     let index = 0;
@@ -30,7 +36,12 @@ export default function MessagePage() {
     return () => clearInterval(timer);
   }, []);
 
+  // =========================================
+  // KEMBALI KE OPENING
+  // =========================================
+
   const handleBack = () => {
+    stopMusic();
     router.push("/");
   };
 
@@ -133,7 +144,7 @@ export default function MessagePage() {
         >
 
           {/* =========================================
-              DEKORASI SUDUT ATAS
+              DEKORASI SUDUT ATAS KIRI
           ========================================= */}
 
           <div
@@ -149,6 +160,10 @@ export default function MessagePage() {
               opacity-60
             "
           />
+
+          {/* =========================================
+              DEKORASI SUDUT ATAS KANAN
+          ========================================= */}
 
           <div
             className="
@@ -221,10 +236,19 @@ export default function MessagePage() {
           </motion.h1>
 
           {/* =========================================
-              ORNAMEN GARIS
+              GARIS DEKORASI
           ========================================= */}
 
-          <div className="flex items-center justify-center gap-3 mt-4 mb-9">
+          <div
+            className="
+              flex
+              items-center
+              justify-center
+              gap-3
+              mt-4
+              mb-9
+            "
+          >
 
             <div
               className="
@@ -235,7 +259,12 @@ export default function MessagePage() {
               "
             />
 
-            <span className="text-[#c9a3a3] text-sm">
+            <span
+              className="
+                text-[#c9a3a3]
+                text-sm
+              "
+            >
               ✦
             </span>
 
@@ -251,7 +280,7 @@ export default function MessagePage() {
           </div>
 
           {/* =========================================
-              ISI PESAN
+              TEKS
           ========================================= */}
 
           <motion.div
@@ -269,16 +298,11 @@ export default function MessagePage() {
               w-full
               px-2
               sm:px-3
-
               text-center
-
               text-[#4b3b3b]
-
               font-text
-
               text-[14px]
               sm:text-[15px]
-
               leading-7
               sm:leading-8
             "
@@ -335,7 +359,7 @@ export default function MessagePage() {
           )}
 
           {/* =========================================
-              DEKORASI SUDUT BAWAH
+              DEKORASI SUDUT BAWAH KIRI
           ========================================= */}
 
           <div
@@ -351,6 +375,10 @@ export default function MessagePage() {
               opacity-60
             "
           />
+
+          {/* =========================================
+              DEKORASI SUDUT BAWAH KANAN
+          ========================================= */}
 
           <div
             className="
@@ -419,6 +447,7 @@ export default function MessagePage() {
               cursor-pointer
               touch-manipulation
               select-none
+              outline-none
             "
           >
             ← KEMBALI
