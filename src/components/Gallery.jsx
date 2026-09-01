@@ -99,7 +99,7 @@ export default function Gallery() {
 
           left-[25%]
           top-[10%]
-          w-[29%]
+          w-[38%]
 
           sm:left-[25%]
           sm:top-[18%]
@@ -142,7 +142,7 @@ export default function Gallery() {
 
           left-[58%]
           top-[11%]
-          w-[30%]
+          w-[36%]
 
           sm:left-[58%]
           sm:top-[12%]
@@ -185,7 +185,7 @@ export default function Gallery() {
 
           left-[44%]
           top-[17%]
-          w-[25%]
+          w-[32%]
 
           sm:left-[40%]
           sm:top-[30%]
@@ -228,7 +228,7 @@ export default function Gallery() {
 
           left-[12%]
           top-[32%]
-          w-[25%]
+          w-[32%]
 
           sm:left-[7%]
           sm:top-[50%]
@@ -271,7 +271,7 @@ export default function Gallery() {
 
           left-[52%]
           top-[38%]
-          w-[26%]
+          w-[32%]
 
           sm:left-[45%]
           sm:top-[67%]
