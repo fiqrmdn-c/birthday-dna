@@ -181,7 +181,7 @@ export default function Gallery() {
       <div
         className="
           absolute
-          z-50
+          z-40
 
           left-[0%]
           top-[40%]
@@ -199,7 +199,7 @@ export default function Gallery() {
           lg:top-[30%]
           lg:w-[25%]
 
-          rotate-[7deg]
+          rotate-[-35deg]
         "
       >
         <img
@@ -227,7 +227,7 @@ export default function Gallery() {
           z-40
 
           left-[0%]
-          top-[32%]
+          top-[36%]
           w-[33%]
 
           sm:left-[7%]
@@ -270,7 +270,7 @@ export default function Gallery() {
           z-40
 
           left-[52%]
-          top-[38%]
+          top-[42%]
           w-[33%]
 
           sm:left-[45%]
