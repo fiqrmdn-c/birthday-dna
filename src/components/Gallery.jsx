@@ -72,10 +72,10 @@ export default function Gallery() {
           absolute
           z-[30]
 
-          bottom-20
+          bottom-15
           right-0
 
-          w-65
+          w-60
           sm:w-80
           md:w-80
           lg:w-100
@@ -140,7 +140,7 @@ export default function Gallery() {
           absolute
           z-10
 
-          left-[58%]
+          left-[53%]
           top-[8%]
           w-[42%]
 
