@@ -72,7 +72,7 @@ export default function Footer() {
           }}
           className="
             block
-            w-[150px]
+            w-[240px]
             sm:w-[180px]
             md:w-[210px]
             lg:w-[230px]
