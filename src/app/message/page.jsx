@@ -246,8 +246,8 @@ export default function Message() {
             w-[94vw]
             max-w-[560px]
 
-            min-h-[1050px]
-            sm:min-h-[1150px]
+            min-h-[1300px]
+            sm:min-h-[1300px]
 
             rounded-[6px]
 
