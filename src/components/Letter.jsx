@@ -412,7 +412,7 @@ export default function Letter() {
                     text-[#6b4c4c]
                   "
                 >
-                  Topik
+                  Tuan Muda
                 </p>
               </motion.div>
             )}

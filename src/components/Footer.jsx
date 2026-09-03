@@ -100,6 +100,7 @@ export default function Footer() {
             left-1/2
             -translate-x-1/2
             -top-0
+            lg:top-3
             whitespace-nowrap
             text-[#6b4c4c]
             text-xs
@@ -108,7 +109,7 @@ export default function Footer() {
             pointer-events-none
           "
         >
-          KLIK BUNGA KALO KANGEN
+          SPECIAL LETTER FOR YOU, CLICK THE FLOWER
         
         </motion.p>
       </motion.button>
