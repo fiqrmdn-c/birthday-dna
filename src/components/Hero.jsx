@@ -185,20 +185,6 @@ export default function Hero() {
             Birthday
           </h1>
 
-          <p
-            className="
-              font-serif
-              mt-4
-              text-xl
-              sm:text-2xl
-              md:text-3xl
-              lg:text-4xl
-              tracking-wide
-              text-red-400
-            "
-          >
-            Topik
-          </p>
         </div>
       </div>
 
