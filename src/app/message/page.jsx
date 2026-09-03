@@ -3,21 +3,153 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
-import { useMusic } from "../MusicProvider";
+import { useMusic } from "@/app/MusicProvider";
+
+function LilyOfTheValley({
+  className = "",
+  flip = false,
+}) {
+  return (
+    <motion.svg
+      viewBox="0 0 180 180"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      initial={{ opacity: 0, scale: 0.7 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{
+        duration: 0.8,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      className={`
+        absolute
+        w-[115px]
+        h-[115px]
+        sm:w-[135px]
+        sm:h-[135px]
+        pointer-events-none
+        ${flip ? "scale-x-[-1]" : ""}
+        ${className}
+      `}
+    >
+      <path
+        d="M87 18 C82 55 70 86 47 122"
+        stroke="#78966f"
+        strokeWidth="3"
+        strokeLinecap="round"
+      />
+
+      <path
+        d="M64 67 C36 64 19 78 12 105 C37 104 57 94 68 76 Z"
+        fill="#9caf91"
+        opacity="0.75"
+      />
+
+      <path
+        d="M64 72 C42 79 27 91 17 102"
+        stroke="#718b69"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+
+      <path
+        d="M55 103 C29 104 17 119 14 143 C37 137 53 124 61 107 Z"
+        fill="#a9b99d"
+        opacity="0.65"
+      />
+
+      <path
+        d="M54 108 C37 118 25 130 17 140"
+        stroke="#78916f"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+
+      <path
+        d="M82 48 C105 58 120 75 126 103"
+        stroke="#78966f"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+
+      <path
+        d="M74 69 C96 77 108 91 113 115"
+        stroke="#78966f"
+        strokeWidth="2.3"
+        strokeLinecap="round"
+      />
+
+      <g transform="translate(116 78)">
+        <path
+          d="M0 -1 C-10 -10 -19 -5 -16 4 C-14 10 -7 13 0 11 C7 13 14 10 16 4 C19 -5 10 -10 0 -1"
+          fill="#fffdf8"
+          stroke="#dfd6cb"
+          strokeWidth="1"
+        />
+        <circle
+          cx="0"
+          cy="4"
+          r="2"
+          fill="#d5b995"
+        />
+      </g>
+
+      <g transform="translate(128 100)">
+        <path
+          d="M0 -1 C-10 -10 -19 -5 -16 4 C-14 10 -7 13 0 11 C7 13 14 10 16 4 C19 -5 10 -10 0 -1"
+          fill="#fffdf8"
+          stroke="#dfd6cb"
+          strokeWidth="1"
+        />
+        <circle
+          cx="0"
+          cy="4"
+          r="2"
+          fill="#d5b995"
+        />
+      </g>
+
+      <g transform="translate(101 96)">
+        <path
+          d="M0 -1 C-10 -10 -19 -5 -16 4 C-14 10 -7 13 0 11 C7 13 14 10 16 4 C19 -5 10 -10 0 -1"
+          fill="#fffdf8"
+          stroke="#dfd6cb"
+          strokeWidth="1"
+        />
+        <circle
+          cx="0"
+          cy="4"
+          r="2"
+          fill="#d5b995"
+        />
+      </g>
+
+      <g transform="translate(112 119)">
+        <path
+          d="M0 -1 C-10 -10 -19 -5 -16 4 C-14 10 -7 13 0 11 C7 13 14 10 16 4 C19 -5 10 -10 0 -1"
+          fill="#fffdf8"
+          stroke="#dfd6cb"
+          strokeWidth="1"
+        />
+        <circle
+          cx="0"
+          cy="4"
+          r="2"
+          fill="#d5b995"
+        />
+      </g>
+    </motion.svg>
+  );
+}
 
 const messageText =
-  "Terima kasih sudah menjadi bagian dari cerita ini. Semoga di usia yang baru, semakin banyak hal baik yang datang kepadamu. Semoga setiap langkah yang kamu ambil membawa kamu lebih dekat dengan semua hal yang kamu impikan. Tetap menjadi dirimu sendiri, tetap tersenyum, dan nikmati setiap proses yang sedang kamu jalani.";
+  "Aku pernah benar-benar sayang sama kamu.\nYa, perasaan itu bukan sekadar karena terbiasa ngobrol atau karena kita sering berkomunikasi. Ada banyak hal kecil dari kamu yang mungkin menurutmu biasa aja, tapi buat aku ya itu berarti, contohnya mungkin cara kamu cerita, bercanda, atau sekadar hadir. Ya itu pernah membuat aku ngerasa senang.\nAku sadar sih, ada beberapa sikapku yang mungkin akhirnya membuat kamu tidak nyaman. Aku minta maaf untuk itu. Aku mungkin tidak sepenuhnya memahami apa yang kamu rasakan waktu itu. Tapi sekarang aku mencoba menerima bahwa perasaan dan kenyamanan seseorang memang tidak bisa dipaksakan.\nAku tetap bersyukur pernah mengenal kamu. Terlepas dari bagaimana akhirnya hubungan kita, kayanya bakalan canggung si wkwk, ada bagian dari aku yang menjadi lebih berwarna karena mengenal kamu.\nAku sebenarnya tidak selalu tahu bagaimana cara menunjukkan perasaanku dengan baik. Kadang aku terlalu banyak mikir tentang apa yang harus aku katakan sampai akhirnya caraku justru mungkin terlihat aneh atau berlebihan. Kalau suatu hari kamu ingin berbicara dan mencoba mengenal satu sama lain lagi, aku akan menghargainya. Tenang aja ini bukan pemaksaan kok.\nAku berharap kamu bisa menemukan orang dan kehidupan yang membuat kamu merasa nyaman. Kalau suatu hari kamu mengingat aku, aku berharap yang kamu ingat bukan hanya kesalahan atau hal-hal yang membuat kita tidak cocok, tapi juga bahwa pernah ada aku, seseorang yang benar-benar menghargai keberadaanmu.";
 
-export default function MessagePage() {
+export default function Message() {
   const router = useRouter();
   const { stopMusic } = useMusic();
 
   const [displayText, setDisplayText] = useState("");
   const [typingFinished, setTypingFinished] = useState(false);
-
-  // =========================================
-  // TYPING ANIMATION
-  // =========================================
 
   useEffect(() => {
     let index = 0;
@@ -31,14 +163,10 @@ export default function MessagePage() {
         clearInterval(timer);
         setTypingFinished(true);
       }
-    }, 30);
+    }, 20);
 
     return () => clearInterval(timer);
   }, []);
-
-  // =========================================
-  // KEMBALI KE OPENING
-  // =========================================
 
   const handleBack = () => {
     stopMusic();
@@ -46,17 +174,12 @@ export default function MessagePage() {
   };
 
   return (
-    <main className="relative min-h-screen w-full overflow-x-hidden">
-
-      {/* =========================================
-          BACKGROUND
-      ========================================= */}
-
+    <main className="relative min-h-screen w-full overflow-hidden">
+      {/* BACKGROUND */}
       <div
         className="
           fixed
           inset-0
-          z-0
           bg-cover
           bg-center
           bg-no-repeat
@@ -67,222 +190,160 @@ export default function MessagePage() {
         }}
       />
 
-      {/* =========================================
-          OVERLAY
-      ========================================= */}
-
-      <div
-        className="
-          fixed
-          inset-0
-          z-[1]
-          bg-white/10
-          pointer-events-none
-        "
-      />
-
-      {/* =========================================
-          KONTEN
-      ========================================= */}
-
-      <section
-        className="
-          relative
-          z-10
-          min-h-screen
-          w-full
-          flex
-          items-center
-          justify-center
-          px-5
-          py-10
-          sm:px-8
-          sm:py-16
-        "
-      >
-
-        {/* =========================================
-            KERTAS
-        ========================================= */}
-
+      <div className="relative z-10 min-h-screen flex items-center justify-center px-4 py-16">
         <motion.div
           initial={{
             opacity: 0,
-            y: 70,
-            scale: 0.9,
-            rotate: -1,
+            scale: 0.8,
+            y: 80,
           }}
           animate={{
             opacity: 1,
-            y: 0,
             scale: 1,
-            rotate: 0,
+            y: 0,
           }}
           transition={{
-            duration: 1,
+            duration: 1.1,
             ease: [0.22, 1, 0.36, 1],
           }}
           className="
             relative
-            w-full
-            max-w-[460px]
-            min-h-[620px]
-            sm:min-h-[680px]
-
-            bg-[#fffdf7]
-
-            px-8
-            py-10
-            sm:px-12
-            sm:py-12
-
-            shadow-[0_18px_45px_rgba(80,45,45,0.18)]
+            w-[90vw]
+            max-w-[650px]
+            min-h-[1100px]
+            sm:min-h-[1200px]
+            rounded-[6px]
+            bg-[#fffaf0]
+            border
+            border-[#d3bdac]
+            shadow-[0_15px_45px_rgba(90,55,55,0.20)]
+            px-7
+            py-9
+            sm:px-16
+            sm:py-14
+            overflow-hidden
           "
           style={{
-            borderRadius: "3px 5px 4px 6px",
+            backgroundImage: `
+              radial-gradient(
+                rgba(120, 80, 60, 0.045) 0.7px,
+                transparent 0.7px
+              )
+            `,
+            backgroundSize: "8px 8px",
           }}
         >
+          {/* DEKORASI ATAS */}
+          <div className="absolute top-4 left-5 text-xl opacity-70">
+            🌸
+          </div>
 
-          {/* =========================================
-              DEKORASI SUDUT ATAS KIRI
-          ========================================= */}
+          <div className="absolute top-4 right-5 text-xl opacity-70">
+            🌷
+          </div>
 
-          <div
-            className="
-              absolute
-              top-4
-              left-4
-              w-10
-              h-10
-              border-t
-              border-l
-              border-[#d8bcbc]
-              opacity-60
-            "
+          {/* LILY OF THE VALLEY ATAS */}
+          <LilyOfTheValley
+            className="top-[-15px] left-[-20px]"
           />
 
-          {/* =========================================
-              DEKORASI SUDUT ATAS KANAN
-          ========================================= */}
-
-          <div
-            className="
-              absolute
-              top-4
-              right-4
-              w-10
-              h-10
-              border-t
-              border-r
-              border-[#d8bcbc]
-              opacity-60
-            "
+          <LilyOfTheValley
+            flip
+            className="top-[-15px] right-[-20px]"
           />
 
-          {/* =========================================
-              ORNAMEN
-          ========================================= */}
+          {/* =========================
+              TOMBOL KEMBALI
+          ========================= */}
+          <motion.button
+            type="button"
+            onClick={handleBack}
+            whileTap={{ scale: 0.95 }}
+            className="
+              absolute
+              bottom-10
+              left-1/2
+              -translate-x-1/2
+              translate-y-1
 
+              px-6
+              py-3
+
+              rounded-full
+
+              border-2
+              border-[#a77c7c]
+
+              bg-[#fffaf0]
+
+              text-[10px]
+              sm:text-xs
+              leading-normal
+              tracking-[0.12em]
+              font-text
+              font-medium
+              text-[#8f6969]
+
+              shadow-[0_2px_8px_rgba(90,55,55,0.12)]
+
+              hover:bg-[#f8eee5]
+              hover:border-[#8f6969]
+              hover:text-[#6b4c4c]
+
+              transition-all
+              duration-300
+            "
+          >
+            KEMBALI
+          </motion.button>
+
+          {/* =========================
+              TITLE
+          ========================= */}
           <motion.div
             initial={{
               opacity: 0,
-              scale: 0.5,
-            }}
-            animate={{
-              opacity: 0.75,
-              scale: 1,
-            }}
-            transition={{
-              duration: 0.8,
-              delay: 0.5,
-            }}
-            className="
-              text-center
-              text-4xl
-              sm:text-5xl
-              text-[#9b7777]
-            "
-          >
-            ❀
-          </motion.div>
-
-          {/* =========================================
-              JUDUL
-          ========================================= */}
-
-          <motion.h1
-            initial={{
-              opacity: 0,
-              y: 15,
+              y: 20,
             }}
             animate={{
               opacity: 1,
               y: 0,
             }}
             transition={{
-              duration: 0.8,
               delay: 0.7,
+              duration: 0.8,
             }}
             className="
-              mt-4
               text-center
-              font-title
-              text-4xl
-              sm:text-5xl
-              text-[#6b4c4c]
+              translate-y-4
+              sm:translate-y-4
             "
           >
-            Sebuah Pesan
-          </motion.h1>
-
-          {/* =========================================
-              GARIS DEKORASI
-          ========================================= */}
-
-          <div
-            className="
-              flex
-              items-center
-              justify-center
-              gap-3
-              mt-4
-              mb-9
-            "
-          >
-
-            <div
+            <p
               className="
-                w-12
-                sm:w-16
-                h-px
-                bg-[#c9a3a3]
-              "
-            />
-
-            <span
-              className="
-                text-[#c9a3a3]
-                text-sm
+                font-title
+                text-4xl
+                sm:text-5xl
+                text-[#6b4c4c]
               "
             >
-              ✦
-            </span>
+              Special Letter
+            </p>
 
-            <div
-              className="
-                w-12
-                sm:w-16
-                h-px
-                bg-[#c9a3a3]
-              "
-            />
+            <div className="mt-4 flex items-center gap-3">
+              <div className="h-px flex-1 bg-[#d8bcbc]" />
 
-          </div>
+              <span className="text-[#b77979] text-sm">
+                ♡
+              </span>
 
-          {/* =========================================
-              TEKS
-          ========================================= */}
+              <div className="h-px flex-1 bg-[#d8bcbc]" />
+            </div>
+          </motion.div>
 
+          {/* =========================
+              MESSAGE
+          ========================= */}
           <motion.div
             initial={{
               opacity: 0,
@@ -291,20 +352,26 @@ export default function MessagePage() {
               opacity: 1,
             }}
             transition={{
-              duration: 0.8,
-              delay: 1,
+              delay: 1.1,
+              duration: 0.6,
             }}
             className="
+              mt-8
               w-full
-              px-2
-              sm:px-3
-              text-center
+              px-16
+              sm:px-20
+
               text-[#4b3b3b]
               font-text
+
               text-[14px]
-              sm:text-[15px]
+              sm:text-[18px]
+
               leading-7
-              sm:leading-8
+              sm:leading-9
+
+              text-center
+              whitespace-pre-line
             "
           >
             {displayText}
@@ -318,22 +385,24 @@ export default function MessagePage() {
                   duration: 0.7,
                   repeat: Infinity,
                 }}
-                className="ml-1"
+                className="
+                  ml-1
+                  text-[#b77979]
+                "
               >
                 |
               </motion.span>
             )}
           </motion.div>
 
-          {/* =========================================
-              TANDA TANGAN
-          ========================================= */}
-
+          {/* =========================
+              SIGNATURE
+          ========================= */}
           {typingFinished && (
             <motion.div
               initial={{
                 opacity: 0,
-                y: 15,
+                y: 10,
               }}
               animate={{
                 opacity: 1,
@@ -343,120 +412,89 @@ export default function MessagePage() {
                 duration: 0.8,
               }}
               className="
-                mt-10
-                pr-2
+                mt-14
+                translate-x-[-20px]
+                sm:translate-x-[-30px]
                 text-right
-                font-title
-                text-3xl
-                sm:text-4xl
-                text-[#6b4c4c]
               "
             >
-              Untukmu,
-              <br />
-              Topik
+              <p
+                className="
+                  mt-1
+                  font-title
+                  text-3xl
+                  sm:text-4xl
+                  text-[#6b4c4c]
+                "
+              >
+                Tuan Muda
+              </p>
             </motion.div>
           )}
 
-          {/* =========================================
-              DEKORASI SUDUT BAWAH KIRI
-          ========================================= */}
+          {/* =========================
+              DEKORASI BAWAH
+          ========================= */}
+          <div className="absolute bottom-5 left-6 text-lg opacity-60">
+            🌿
+          </div>
 
-          <div
+          <div className="absolute bottom-5 right-6 text-lg opacity-60">
+            🌿
+          </div>
+
+          <LilyOfTheValley
             className="
-              absolute
-              bottom-4
-              left-4
-              w-10
-              h-10
-              border-b
-              border-l
-              border-[#d8bcbc]
-              opacity-60
+              bottom-[-25px]
+              left-[-25px]
+              rotate-[15deg]
             "
           />
 
-          {/* =========================================
-              DEKORASI SUDUT BAWAH KANAN
-          ========================================= */}
-
-          <div
+          <LilyOfTheValley
+            flip
             className="
-              absolute
-              bottom-4
-              right-4
-              w-10
-              h-10
-              border-b
-              border-r
-              border-[#d8bcbc]
-              opacity-60
+              bottom-[-25px]
+              right-[-25px]
+              rotate-[-15deg]
             "
           />
 
-          {/* =========================================
-              TOMBOL KEMBALI
-          ========================================= */}
+          {/* =========================
+              TERIMA KASIH SUDAH MEMBACA
+          ========================= */}
+          {typingFinished && (
+            <motion.div
+              initial={{
+                opacity: 0,
+              }}
+              animate={{
+                opacity: [0.4, 1, 0.4],
+              }}
+              transition={{
+                duration: 1.8,
+                repeat: Infinity,
+              }}
+              className="
+                absolute
+                bottom-16
+                left-1/2
+                -translate-x-1/2
+                translate-y-1
 
-          <motion.button
-            type="button"
-            onClick={handleBack}
-            initial={{
-              opacity: 0,
-              y: 10,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              delay: 2,
-              duration: 0.8,
-            }}
-            whileHover={{
-              scale: 1.05,
-            }}
-            whileTap={{
-              scale: 0.93,
-            }}
-            className="
-              absolute
-              bottom-7
-              left-1/2
-              -translate-x-1/2
-
-              px-5
-              py-2
-
-              rounded-full
-
-              bg-[#f7eaea]
-
-              border
-              border-[#d4b2b2]
-
-              text-[#6b4c4c]
-
-              text-[11px]
-              sm:text-xs
-
-              tracking-[0.12em]
-
-              shadow-sm
-
-              cursor-pointer
-              touch-manipulation
-              select-none
-              outline-none
-            "
-          >
-            ← KEMBALI
-          </motion.button>
-
+                font-text
+                text-[16px]
+                sm:text-[18px]
+                tracking-[0.15em]
+                text-[#a77c7c]
+                whitespace-nowrap
+              "
+            >
+              ♡ TERIMA KASIH SUDAH MEMBACA ♡
+            </motion.div>
+          )}
         </motion.div>
-
-      </section>
-
+      </div>
     </main>
   );
 }
