@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 const letterText =
-  "Selamat ulang tahun, Topik. Semoga setiap harimu dipenuhi kebahagiaan, kesehatan, dan orang-orang baik yang selalu ada di sekitarmu. Semoga semua doa dan harapan yang kamu panjatkan perlahan menemukan jalannya untuk menjadi kenyataan. Terima kasih sudah menjadi bagian dari cerita yang begitu berarti. Semoga di usia yang baru ini ada lebih banyak hal baik yang datang, lebih banyak alasan untuk tersenyum, dan lebih banyak momen indah yang bisa kamu kenang.";
+  "happy birthday yaa 🎂 semoga semua hal baik yang kamu harapkan bisa pelan-pelan tercapai, semoga kamu selalu sehat, dimudahkan segala urusannya, dan punya banyak alasan buat senyum, take care yaa, semoga hari ini jadi hari yang menyenangkan buat kamu.";
 
 export default function Letter() {
   const [opened, setOpened] = useState(false);
@@ -13,6 +13,7 @@ export default function Letter() {
 
   // =================================
   // EFEK MENGETIK
+  // KECEPATAN ADAPTIF
   // =================================
 
   useEffect(() => {
@@ -20,16 +21,35 @@ export default function Letter() {
 
     let index = 0;
 
+    /*
+      Kecepatan menyesuaikan panjang teks.
+
+      Teks pendek  -> sedikit lebih lambat
+      Teks panjang -> sedikit lebih cepat
+
+      Tujuannya agar durasi typing tetap nyaman
+      meskipun isi surat berubah.
+    */
+
+    const totalCharacters = letterText.length;
+
+    const typingDuration = Math.min(
+      Math.max(totalCharacters * 18, 3500),
+      6500
+    );
+
+    const typingSpeed = typingDuration / totalCharacters;
+
     const timer = setInterval(() => {
       index++;
 
       setDisplayText(letterText.slice(0, index));
 
-      if (index >= letterText.length) {
+      if (index >= totalCharacters) {
         clearInterval(timer);
         setTypingFinished(true);
       }
-    }, 20);
+    }, typingSpeed);
 
     return () => clearInterval(timer);
   }, [opened]);
@@ -54,8 +74,8 @@ export default function Letter() {
         className="
           relative
           w-full
-          max-w-[440px]
-          min-h-[600px]
+          max-w-[470px]
+          min-h-[620px]
           flex
           items-center
           justify-center
@@ -85,14 +105,14 @@ export default function Letter() {
             }}
             className="
               absolute
-              top-2
+              top-0
               left-1/2
               -translate-x-1/2
               z-50
               w-full
               px-4
-              text-red-400
-              text-5xs
+              text-[#c97878]
+              text-[11px]
               sm:text-sm
               tracking-[0.12em]
               sm:tracking-[0.15em]
@@ -134,17 +154,12 @@ export default function Letter() {
               className="
                 absolute
                 z-30
-                w-[75vw]
+                w-[82vw]
                 max-w-[440px]
                 min-w-[280px]
                 aspect-[1.55/1]
               "
             >
-
-              {/* =================================
-                  BADAN AMPLOP
-              ================================= */}
-
               <motion.div
                 animate={{
                   rotate: [0, -1.5, 1.5, -1, 1, 0],
@@ -166,7 +181,7 @@ export default function Letter() {
                 }}
               >
 
-                {/* BADAN AMPLOP */}
+                {/* BODY AMPLOP */}
 
                 <div
                   className="
@@ -177,9 +192,7 @@ export default function Letter() {
                   "
                 />
 
-                {/* =================================
-                    BAGIAN DEPAN
-                ================================= */}
+                {/* DEPAN AMPLOP */}
 
                 <div
                   className="
@@ -198,9 +211,7 @@ export default function Letter() {
                   }}
                 />
 
-                {/* =================================
-                    FLAP
-                ================================= */}
+                {/* FLAP */}
 
                 <motion.div
                   animate={{
@@ -224,8 +235,6 @@ export default function Letter() {
                   }}
                 >
 
-                  {/* DEPAN FLAP */}
-
                   <div
                     className="
                       absolute
@@ -238,8 +247,6 @@ export default function Letter() {
                       backfaceVisibility: "hidden",
                     }}
                   />
-
-                  {/* BELAKANG FLAP */}
 
                   <div
                     className="
@@ -257,9 +264,7 @@ export default function Letter() {
 
                 </motion.div>
 
-                {/* =================================
-                    TOMBOL BUKA
-                ================================= */}
+                {/* TOMBOL */}
 
                 <motion.button
                   type="button"
@@ -331,150 +336,345 @@ export default function Letter() {
               className="
                 relative
                 z-20
-                w-[75vw]
-                max-w-[440px]
-                min-h-[500px]
-                sm:min-h-[540px]
-                bg-[#fffdf8]
-                rounded-sm
-                shadow-2xl
-                px-22
+                w-[88vw]
+                max-w-[470px]
+                min-h-[600px]
+                sm:min-h-[650px]
+                rounded-[4px]
+                bg-[#fffaf0]
+                shadow-[0_15px_45px_rgba(90,55,55,0.20)]
+                px-7
                 py-8
-                sm:px-28
+                sm:px-12
                 sm:py-12
+                overflow-hidden
               "
             >
 
               {/* =================================
-                  ORNAMEN
+                  TEKSTUR KERTAS
               ================================= */}
 
               <div
                 className="
-                  w-full
-                  text-center
-                  text-2xl
-                  sm:text-3xl
-                  text-[#9b7777]
-                  opacity-70
-                "
-              >
-                ❀
-              </div>
-
-              {/* =================================
-                  JUDUL
-              ================================= */}
-
-              <h2
-                className="
-                  w-full
-                  mt-4
-                  sm:mt-5
-                  font-title
-                  text-3xl
-                  sm:text-5xl
-                  text-[#6b4c4c]
+                  absolute
+                  inset-0
+                  pointer-events-none
+                  opacity-[0.12]
                 "
                 style={{
-                  textAlign: "center",
+                  backgroundImage:
+                    "radial-gradient(#9d7d7d 0.7px, transparent 0.7px)",
+                  backgroundSize: "9px 9px",
                 }}
-              >
-                Untukmu
-              </h2>
-
-              {/* =================================
-                  GARIS
-              ================================= */}
-
-              <div
-                className="
-                  mx-auto
-                  mt-3
-                  sm:mt-4
-                  mb-6
-                  sm:mb-8
-                  w-16
-                  sm:w-20
-                  h-px
-                  bg-[#c9a3a3]
-                "
               />
 
               {/* =================================
-                  ISI SURAT
+                  DEKORASI ATAS KIRI
               ================================= */}
 
               <div
                 className="
-                  w-full
-                  text-[#4b3b3b]
-                  font-text
-                  text-[14px]
-                  sm:text-base
-                  leading-7
-                  sm:leading-8
+                  absolute
+                  top-3
+                  left-3
+                  text-2xl
+                  sm:text-3xl
+                  opacity-70
+                  rotate-[-20deg]
                 "
-                style={{
-                  textAlign: "center",
-                }}
               >
-                {displayText}
-
-                {/* CURSOR */}
-
-                {opened && !typingFinished && (
-                  <motion.span
-                    animate={{
-                      opacity: [1, 0, 1],
-                    }}
-                    transition={{
-                      duration: 0.7,
-                      repeat: Infinity,
-                    }}
-                    className="ml-1"
-                  >
-                    |
-                  </motion.span>
-                )}
+                🌸
               </div>
 
               {/* =================================
-                  TANDA TANGAN
+                  DEKORASI ATAS KANAN
               ================================= */}
 
-              {typingFinished && (
-                <motion.div
-                  initial={{
-                    opacity: 0,
-                    y: 10,
-                  }}
-                  animate={{
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  transition={{
-                    duration: 0.8,
-                  }}
+              <div
+                className="
+                  absolute
+                  top-3
+                  right-3
+                  text-2xl
+                  sm:text-3xl
+                  opacity-70
+                  rotate-[20deg]
+                "
+              >
+                🌸
+              </div>
+
+              {/* =================================
+                  DEKORASI BAWAH
+              ================================= */}
+
+              <div
+                className="
+                  absolute
+                  bottom-4
+                  left-4
+                  text-xl
+                  sm:text-2xl
+                  opacity-60
+                  rotate-[-15deg]
+                "
+              >
+                ♡
+              </div>
+
+              <div
+                className="
+                  absolute
+                  bottom-4
+                  right-4
+                  text-xl
+                  sm:text-2xl
+                  opacity-60
+                  rotate-[15deg]
+                "
+              >
+                ♡
+              </div>
+
+              {/* =================================
+                  ISI KERTAS
+              ================================= */}
+
+              <div className="relative z-10">
+
+                {/* ORNAMEN */}
+
+                <div
                   className="
-                    mt-7
-                    sm:mt-8
-                    font-title
+                    w-full
+                    text-center
                     text-2xl
                     sm:text-3xl
-                    text-[#6b4c4c]
+                    text-[#b88989]
+                    opacity-80
                   "
-                  style={{
-                    textAlign: "right",
-                    paddingRight: "20px",
-                  }}
                 >
-                  
-                  <br />
-                  Topik
-                </motion.div>
-              )}
+                  ❀
+                </div>
 
+                {/* JUDUL */}
+
+                <h2
+                  className="
+                    w-full
+                    mt-3
+                    sm:mt-4
+                    font-title
+                    text-[38px]
+                    sm:text-5xl
+                    text-[#6b4c4c]
+                    text-center
+                  "
+                >
+                  Untukmu
+                </h2>
+
+                {/* SUBTITLE */}
+
+                <p
+                  className="
+                    mt-1
+                    text-center
+                    text-[10px]
+                    sm:text-xs
+                    tracking-[0.18em]
+                    text-[#b58a8a]
+                  "
+                >
+                  SEBUAH PESAN KECIL UNTUKMU
+                </p>
+
+                {/* GARIS */}
+
+                <div
+                  className="
+                    flex
+                    items-center
+                    justify-center
+                    gap-3
+                    mt-4
+                    mb-7
+                    sm:mt-5
+                    sm:mb-9
+                  "
+                >
+                  <div
+                    className="
+                      w-12
+                      sm:w-16
+                      h-px
+                      bg-[#d6b0b0]
+                    "
+                  />
+
+                  <span className="text-[#c58d8d] text-sm">
+                    ♡
+                  </span>
+
+                  <div
+                    className="
+                      w-12
+                      sm:w-16
+                      h-px
+                      bg-[#d6b0b0]
+                    "
+                  />
+                </div>
+
+                {/* =================================
+                    ISI SURAT
+                ================================= */}
+
+                <div
+                  className="
+                    w-full
+                    px-2
+                    sm:px-3
+                    text-[#4b3b3b]
+                    font-text
+                    text-[13px]
+                    sm:text-[15px]
+                    leading-7
+                    sm:leading-8
+                    text-center
+                  "
+                >
+                  {displayText}
+
+                  {/* CURSOR */}
+
+                  {!typingFinished && (
+                    <motion.span
+                      animate={{
+                        opacity: [1, 0, 1],
+                      }}
+                      transition={{
+                        duration: 0.7,
+                        repeat: Infinity,
+                      }}
+                      className="
+                        ml-1
+                        text-[#b77979]
+                      "
+                    >
+                      |
+                    </motion.span>
+                  )}
+                </div>
+
+                {/* =================================
+                    PEMISAH
+                ================================= */}
+
+                {typingFinished && (
+                  <motion.div
+                    initial={{
+                      opacity: 0,
+                      scaleX: 0,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      scaleX: 1,
+                    }}
+                    transition={{
+                      duration: 0.7,
+                    }}
+                    className="
+                      mx-auto
+                      mt-7
+                      sm:mt-8
+                      w-24
+                      sm:w-32
+                      h-px
+                      bg-[#d6b0b0]
+                    "
+                  />
+                )}
+
+                {/* =================================
+                    TANDA TANGAN
+                ================================= */}
+
+                {typingFinished && (
+                  <motion.div
+                    initial={{
+                      opacity: 0,
+                      y: 10,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      y: 0,
+                    }}
+                    transition={{
+                      duration: 0.8,
+                    }}
+                    className="
+                      mt-5
+                      sm:mt-6
+                      text-right
+                      pr-3
+                      sm:pr-6
+                    "
+                  >
+                    <p
+                      className="
+                        font-text
+                        text-[10px]
+                        sm:text-xs
+                        tracking-[0.12em]
+                        text-[#a77c7c]
+                      "
+                    >
+                      DENGAN BANYAK DOA BAIK,
+                    </p>
+
+                    <p
+                      className="
+                        mt-1
+                        font-title
+                        text-3xl
+                        sm:text-4xl
+                        text-[#6b4c4c]
+                      "
+                    >
+                      Topik
+                    </p>
+                  </motion.div>
+                )}
+
+                {/* ORNAMEN BAWAH */}
+
+                {typingFinished && (
+                  <motion.div
+                    initial={{
+                      opacity: 0,
+                    }}
+                    animate={{
+                      opacity: 1,
+                    }}
+                    transition={{
+                      delay: 0.5,
+                      duration: 0.7,
+                    }}
+                    className="
+                      mt-7
+                      sm:mt-8
+                      text-center
+                      text-[#b88989]
+                      text-xl
+                    "
+                  >
+                    ✿
+                  </motion.div>
+                )}
+
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
@@ -500,9 +700,9 @@ export default function Letter() {
               absolute
               -bottom-2
               w-full
-              text-red-400
-              text-[18px]
-              sm:text-5xs
+              text-[#c97878]
+              text-[11px]
+              sm:text-sm
               tracking-[0.12em]
               sm:tracking-[0.15em]
               text-center
