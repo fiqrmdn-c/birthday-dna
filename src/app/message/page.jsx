@@ -37,7 +37,6 @@ function LilyOfTheValley({
         ${className}
       `}
     >
-      {/* Batang utama */}
       <path
         d="M87 18 C82 55 70 86 47 122"
         stroke="#78966f"
@@ -45,7 +44,6 @@ function LilyOfTheValley({
         strokeLinecap="round"
       />
 
-      {/* Daun 1 */}
       <path
         d="M64 67 C36 64 19 78 12 105 C37 104 57 94 68 76 Z"
         fill="#9caf91"
@@ -59,7 +57,6 @@ function LilyOfTheValley({
         strokeLinecap="round"
       />
 
-      {/* Daun 2 */}
       <path
         d="M55 103 C29 104 17 119 14 143 C37 137 53 124 61 107 Z"
         fill="#a9b99d"
@@ -73,7 +70,6 @@ function LilyOfTheValley({
         strokeLinecap="round"
       />
 
-      {/* Batang bunga */}
       <path
         d="M82 48 C105 58 120 75 126 103"
         stroke="#78966f"
@@ -88,7 +84,6 @@ function LilyOfTheValley({
         strokeLinecap="round"
       />
 
-      {/* Bunga 1 */}
       <g transform="translate(116 78)">
         <path
           d="M0 -1 C-10 -10 -19 -5 -16 4 C-14 10 -7 13 0 11 C7 13 14 10 16 4 C19 -5 10 -10 0 -1"
@@ -96,7 +91,6 @@ function LilyOfTheValley({
           stroke="#dfd6cb"
           strokeWidth="1"
         />
-
         <circle
           cx="0"
           cy="4"
@@ -105,7 +99,6 @@ function LilyOfTheValley({
         />
       </g>
 
-      {/* Bunga 2 */}
       <g transform="translate(128 100)">
         <path
           d="M0 -1 C-10 -10 -19 -5 -16 4 C-14 10 -7 13 0 11 C7 13 14 10 16 4 C19 -5 10 -10 0 -1"
@@ -113,7 +106,6 @@ function LilyOfTheValley({
           stroke="#dfd6cb"
           strokeWidth="1"
         />
-
         <circle
           cx="0"
           cy="4"
@@ -122,7 +114,6 @@ function LilyOfTheValley({
         />
       </g>
 
-      {/* Bunga 3 */}
       <g transform="translate(101 96)">
         <path
           d="M0 -1 C-10 -10 -19 -5 -16 4 C-14 10 -7 13 0 11 C7 13 14 10 16 4 C19 -5 10 -10 0 -1"
@@ -130,7 +121,6 @@ function LilyOfTheValley({
           stroke="#dfd6cb"
           strokeWidth="1"
         />
-
         <circle
           cx="0"
           cy="4"
@@ -139,7 +129,6 @@ function LilyOfTheValley({
         />
       </g>
 
-      {/* Bunga 4 */}
       <g transform="translate(112 119)">
         <path
           d="M0 -1 C-10 -10 -19 -5 -16 4 C-14 10 -7 13 0 11 C7 13 14 10 16 4 C19 -5 10 -10 0 -1"
@@ -147,7 +136,6 @@ function LilyOfTheValley({
           stroke="#dfd6cb"
           strokeWidth="1"
         />
-
         <circle
           cx="0"
           cy="4"
@@ -160,7 +148,7 @@ function LilyOfTheValley({
 }
 
 const messageText =
-  "\n\nAku pernah benar-benar sayang sama kamu.\nYa, perasaan itu bukan sekadar karena terbiasa ngobrol atau karena kita sering berkomunikasi. Ada banyak hal kecil dari kamu yang mungkin menurutmu biasa aja, tapi buat aku ya itu berarti, contohnya mungkin cara kamu cerita, bercanda, atau sekadar hadir. Ya itu pernah membuat aku ngerasa senang.\nAku sadar sih, ada beberapa sikapku yang mungkin akhirnya membuat kamu tidak nyaman. Aku minta maaf untuk itu. Aku mungkin tidak sepenuhnya memahami apa yang kamu rasakan waktu itu. Tapi sekarang aku mencoba menerima bahwa perasaan dan kenyamanan seseorang memang tidak bisa dipaksakan.\nAku tetap bersyukur pernah mengenal kamu. Terlepas dari bagaimana akhirnya hubungan kita, kayanya bakalan canggung si wkwk, ada bagian dari aku yang menjadi lebih berwarna karena mengenal kamu.\nAku sebenarnya tidak selalu tahu bagaimana cara menunjukkan perasaanku dengan baik. Kadang aku terlalu banyak mikir tentang apa yang harus aku katakan sampai akhirnya caraku justru mungkin terlihat aneh atau berlebihan. Kalau suatu hari kamu ingin berbicara dan mencoba mengenal satu sama lain lagi, aku akan menghargainya. Tenang aja ini bukan pemaksaan kok.\nAku berharap kamu bisa menemukan orang dan kehidupan yang membuat kamu merasa nyaman. Kalau suatu hari kamu mengingat aku, aku berharap yang kamu ingat bukan hanya kesalahan atau hal-hal yang membuat kita tidak cocok, tapi juga bahwa pernah ada aku, seseorang yang benar-benar menghargai keberadaanmu.";
+  "\nAku pernah benar-benar sayang sama kamu.\nYa, perasaan itu bukan sekadar karena terbiasa ngobrol atau karena kita sering berkomunikasi. Ada banyak hal kecil dari kamu yang mungkin menurutmu biasa aja, tapi buat aku ya itu berarti, contohnya mungkin cara kamu cerita, bercanda, atau sekadar hadir. Ya itu pernah membuat aku ngerasa senang.\nAku sadar sih, ada beberapa sikapku yang mungkin akhirnya membuat kamu tidak nyaman. Aku minta maaf untuk itu. Aku mungkin tidak sepenuhnya memahami apa yang kamu rasakan waktu itu. Tapi sekarang aku mencoba menerima bahwa perasaan dan kenyamanan seseorang memang tidak bisa dipaksakan.\nAku tetap bersyukur pernah mengenal kamu. Terlepas dari bagaimana akhirnya hubungan kita, kayanya bakalan canggung si wkwk, ada bagian dari aku yang menjadi lebih berwarna karena mengenal kamu.\nAku sebenarnya tidak selalu tahu bagaimana cara menunjukkan perasaanku dengan baik. Kadang aku terlalu banyak mikir tentang apa yang harus aku katakan sampai akhirnya caraku justru mungkin terlihat aneh atau berlebihan. Kalau suatu hari kamu ingin berbicara dan mencoba mengenal satu sama lain lagi, aku akan menghargainya. Tenang aja ini bukan pemaksaan kok.\nAku berharap kamu bisa menemukan orang dan kehidupan yang membuat kamu merasa nyaman. Kalau suatu hari kamu mengingat aku, aku berharap yang kamu ingat bukan hanya kesalahan atau hal-hal yang membuat kita tidak cocok, tapi juga bahwa pernah ada aku, seseorang yang benar-benar menghargai keberadaanmu.";
 
 export default function Message() {
   const router = useRouter();
@@ -215,7 +203,7 @@ export default function Message() {
 
 
       {/* =====================================================
-          PAPER CONTAINER
+          PAPER WRAPPER
       ===================================================== */}
       <div
         className="
@@ -231,6 +219,9 @@ export default function Message() {
         "
       >
 
+        {/* ===================================================
+            PAPER
+        =================================================== */}
         <motion.div
           initial={{
             opacity: 0,
@@ -251,11 +242,12 @@ export default function Message() {
 
           className="
             relative
+
             w-[94vw]
             max-w-[560px]
 
-            min-h-[1400px]
-            sm:min-h-[1400px]
+            min-h-[1050px]
+            sm:min-h-[1150px]
 
             rounded-[6px]
 
@@ -513,7 +505,6 @@ export default function Message() {
 
             {displayText}
 
-
             {/* CURSOR */}
             {!typingFinished && (
               <motion.span
@@ -640,7 +631,7 @@ export default function Message() {
 
 
           {/* =================================================
-              TERIMA KASIH
+              TERIMA KASIH SUDAH MEMBACA
           ================================================= */}
           {typingFinished && (
             <motion.div
