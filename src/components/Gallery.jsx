@@ -1,5 +1,7 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 const photos = [
   "/images/foto1.png",
   "/images/foto2.png",
@@ -14,9 +16,40 @@ const galleryFlower = [
   "/images/galleryflower3.png",
 ];
 
+const photoAnimation = {
+  hidden: {
+    opacity: 0,
+    scale: 0.85,
+    y: 35,
+  },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+  },
+};
+
 export default function Gallery() {
   return (
-    <section
+    <motion.section
+      initial={{
+        opacity: 0,
+        scale: 1.04,
+        y: 25,
+      }}
+      whileInView={{
+        opacity: 1,
+        scale: 1,
+        y: 0,
+      }}
+      viewport={{
+        once: true,
+        amount: 0.15,
+      }}
+      transition={{
+        duration: 1.2,
+        ease: [0.22, 1, 0.36, 1],
+      }}
       className="
         relative
         w-full
@@ -58,6 +91,7 @@ export default function Gallery() {
         "
       />
 
+
       {/* =========================================
           FLOWER 3
           KANAN BAWAH
@@ -90,9 +124,22 @@ export default function Gallery() {
 
       {/* =========================================
           FOTO 1
+          URUTAN ANIMASI #1
       ========================================= */}
 
-      <div
+      <motion.div
+        variants={photoAnimation}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{
+          once: true,
+          amount: 0.15,
+        }}
+        transition={{
+          duration: 1.2,
+          delay: 0.2,
+          ease: [0.22, 1, 0.36, 1],
+        }}
         className="
           absolute
           z-20
@@ -128,14 +175,29 @@ export default function Gallery() {
           "
           draggable={false}
         />
-      </div>
+      </motion.div>
 
 
       {/* =========================================
           FOTO 5
+          URUTAN ANIMASI #5
+          PENUTUP
+          DURASI LEBIH LAMA
       ========================================= */}
 
-      <div
+      <motion.div
+        variants={photoAnimation}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{
+          once: true,
+          amount: 0.15,
+        }}
+        transition={{
+          duration: 2,
+          delay: 4.6,
+          ease: [0.22, 1, 0.36, 1],
+        }}
         className="
           absolute
           z-10
@@ -171,14 +233,27 @@ export default function Gallery() {
           "
           draggable={false}
         />
-      </div>
+      </motion.div>
 
 
       {/* =========================================
           FOTO 3
+          URUTAN ANIMASI #4
       ========================================= */}
 
-      <div
+      <motion.div
+        variants={photoAnimation}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{
+          once: true,
+          amount: 0.15,
+        }}
+        transition={{
+          duration: 1.2,
+          delay: 3.2,
+          ease: [0.22, 1, 0.36, 1],
+        }}
         className="
           absolute
           z-40
@@ -214,14 +289,27 @@ export default function Gallery() {
           "
           draggable={false}
         />
-      </div>
+      </motion.div>
 
 
       {/* =========================================
           FOTO 2
+          URUTAN ANIMASI #2
       ========================================= */}
 
-      <div
+      <motion.div
+        variants={photoAnimation}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{
+          once: true,
+          amount: 0.15,
+        }}
+        transition={{
+          duration: 1.2,
+          delay: 1.3,
+          ease: [0.22, 1, 0.36, 1],
+        }}
         className="
           absolute
           z-40
@@ -257,14 +345,27 @@ export default function Gallery() {
           "
           draggable={false}
         />
-      </div>
+      </motion.div>
 
 
       {/* =========================================
           FOTO 4
+          URUTAN ANIMASI #3
       ========================================= */}
 
-      <div
+      <motion.div
+        variants={photoAnimation}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{
+          once: true,
+          amount: 0.15,
+        }}
+        transition={{
+          duration: 1.2,
+          delay: 2.3,
+          ease: [0.22, 1, 0.36, 1],
+        }}
         className="
           absolute
           z-40
@@ -300,7 +401,7 @@ export default function Gallery() {
           "
           draggable={false}
         />
-      </div>
+      </motion.div>
 
 
       {/* =========================================
@@ -339,6 +440,6 @@ export default function Gallery() {
         Gallery
       </h2>
 
-    </section>
+    </motion.section>
   );
 }
