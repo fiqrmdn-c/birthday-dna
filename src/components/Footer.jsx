@@ -21,10 +21,72 @@ export default function Footer() {
         flex
         items-center
         justify-center
+        overflow-hidden
+        bg-[#f8dede]
       "
     >
 
       {/* =========================================
+          LAYER 1
+          BACKGROUND PINK
+      ========================================= */}
+
+      <div
+        className="
+          absolute
+          inset-0
+          z-0
+          bg-[#f8dede]
+        "
+      />
+
+
+      {/* =========================================
+          LAYER 2
+          FOTO KOLASE
+          EFEK SAPU DARI ATAS KE BAWAH
+      ========================================= */}
+
+      <motion.div
+        initial={{
+          clipPath: "inset(0 0 50% 0)",
+        }}
+        whileInView={{
+          clipPath: "inset(0 0 0% 0)",
+        }}
+        viewport={{
+          once: true,
+          amount: 0.25,
+        }}
+        transition={{
+          duration: 4,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+        className="
+          absolute
+          inset-0
+          z-10
+          overflow-hidden
+        "
+      >
+        <img
+          src="/images/footer-photo.png"
+          alt=""
+          draggable={false}
+          className="
+            block
+            w-full
+            h-full
+            object-cover
+            select-none
+            pointer-events-none
+          "
+        />
+      </motion.div>
+
+
+      {/* =========================================
+          LAYER 3
           GERBERA
       ========================================= */}
 
@@ -35,9 +97,13 @@ export default function Footer() {
           opacity: 0,
           scale: 0.8,
         }}
-        animate={{
+        whileInView={{
           opacity: 1,
           scale: 1,
+        }}
+        viewport={{
+          once: true,
+          amount: 0.25,
         }}
         transition={{
           duration: 0.8,
@@ -81,37 +147,6 @@ export default function Footer() {
             select-none
           "
         />
-
-        {/* PETUNJUK */}
-
-        <motion.p
-          initial={{
-            opacity: 0,
-          }}
-          animate={{
-            opacity: 1,
-          }}
-          transition={{
-            delay: 0.8,
-            duration: 0.7,
-          }}
-          className="
-            absolute
-            left-1/2
-            -translate-x-1/2
-            -top-0
-            lg:top-3
-            whitespace-nowrap
-            text-[#6b4c4c]
-            text-xs
-            sm:text-sm
-            tracking-[0.15em]
-            pointer-events-none
-          "
-        >
-          SPECIAL LETTER FOR YOU, CLICK THE FLOWER
-        
-        </motion.p>
       </motion.button>
 
     </footer>
