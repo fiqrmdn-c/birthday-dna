@@ -49,7 +49,7 @@ export default function Footer() {
 
       <motion.div
         initial={{
-          clipPath: "inset(0 0 50% 0)",
+          clipPath: "inset(0 0 100% 0)",
         }}
         whileInView={{
           clipPath: "inset(0 0 0% 0)",
